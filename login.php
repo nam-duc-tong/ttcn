@@ -30,70 +30,52 @@
 					echo $loginCustomers;
 				}
 			?>
-        	<h3>Existing Customers</h3>
-        	<p>Sign in with the form below.</p>
+        	<h3>Thông Tin Khách Hàng</h3>
+        	<p>Đăng nhập theo form bên dưới</p>
         	<form action="" method="POST">
-                	<input type="text" name="email" class="field" placeholder="Enter Email">
-                    <input type="password" name="password" class="field" placeholder="Enter Password...........">
-                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
-                    <div class="buttons"><div><input type="submit" name="login" class="grey" value="Sign In" style="background-color:#fff;color: #000; padding: 10px;"></input></div></div>
+                	<input type="text" name="email" class="field" placeholder="Nhập Email">
+                    <input type="password" name="password" class="field" placeholder="Nhập Mật Khẩu...........">
+                 <!-- <p class="note"><a href="#">here</a></p> -->
+                    <div class="buttons"><div><input type="submit" name="login" class="grey" value="Đăng Nhập" style="background-color:#fff;color: #000; padding: 10px;"></input></div></div>
 			</form>
 			</div>
     	<div class="register_account">
-    		<h3>Register New Account</h3>
+    		<h3>Đăng Kí Tài Khoản Mới</h3>
 			<?php
 				if(isset($insertCustomers)){
 					echo $insertCustomers;
 				}
 			?>
-    		<form action="" method="post">
-		   			 <table>
+    		<form action="" method="post" >
+		   			 <table style="width: 260px;">
 		   				<tbody>
 						<tr>
-						<td>
-							<div>
-							<input type="text" name="name" placeholder="Enter Name ..." >
-							</div>
-							
-							<div>
-							   <input type="text" name="city" placeholder="Enter City ...">
-							</div>
-							
-							<div>
-								<input type="text" name="zipcode" placeholder="Enter Zip_code ...">
-							</div>
-							<div>
-								<input type="text" name="email" placeholder="Enter Email ...">
-							</div>
-		    			 </td>
-		    			<td>
-						<div>
-							<input type="text" name="address" placeholder="Enter Address ...">
-						</div>
-		    		<div>
-						<select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Select a Country</option>         
-							<option value="HCM">Thành phố hcm</option>
-							<option value="HCM">Ninh Bình</option>
-							<option value="HCM">Hà Nội</option>
-							<option value="HCM">Hà Nam</option>
-							<option value="HCM">Nghệ An</option>
-							<option value="HCM">Hà Tĩnh</option>
-		         </select>
-				 </div>		        
-	
-		           <div>
-		          <input type="text" name="phone" placeholder="Enter Phone ...">
-		          </div>
-				  
-				  <div>
-					<input type="text" name="password" placeholder="Enter Password ...">
-				</div>
-		    	</td>
-		    </tr> 
-		    </tbody></table> 
-		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Create Account" style="background-color:#fff;color: #000; padding: 10px;"></input></div></div>
-		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+							<td>
+								<div>
+								<input type="text" name="name" placeholder="Nhập Tên ..." >
+								</div>
+								<div>
+									<input type="text" name="email" placeholder="Nhập Email ...">
+								</div>
+							</td>
+							<td>
+								<div>
+									<input type="text" name="address" placeholder="Nhập Địa Chỉ...">
+								</div>
+
+								<div>
+								<input type="text" name="phone" placeholder="Nhập số điện thoại...">
+								</div>
+						
+								<div>
+									<input type="text" name="password" placeholder="Nhập Mật Khẩu ...">
+								</div>
+							</td>
+		   			 	</tr> 
+		    		</tbody>
+					</table> 
+		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Tạo Tài Khoản" style="background-color:#fff;color: #000; padding: 10px;"></input></div></div>
+		   
 		    <div class="clear"></div>
 		    </form>
     	</div>  	
