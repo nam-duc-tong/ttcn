@@ -30,25 +30,25 @@
 					<h2><?php echo $result_details['productName']?></h2>
 					<p><?php echo $fm->textShorten($result_details['product_desc'],150)?></p>					
 					<div class="price">
-						<p>Price: <span><?php echo $result_details['price']." VND"?></span></p>
-						<p>Category: <span><?php echo $result_details['catName']?></span></p>
-						<p>Brand:<span><?php echo $result_details['brandName']?></span></p>
+						<p>Giá: <span><?php echo $result_details['price']." VND"?></span></p>
+						<p>Danh Mục Sản Phẩm: <span><?php echo $result_details['catName']?></span></p>
+						<p>Thương Hiệu:<span><?php echo $result_details['brandName']?></span></p>
 					</div>
 				<div class="add-cart">
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min = "1"/>
-						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
+						<input type="submit" class="buysubmit" name="submit" value="Mua Hàng"/>
 						
 					</form>		
 					<?php
 							if(isset($Addtocart)){
-								echo '<span style="color:red;font-size:18px;font-weight:bold;">Product Already Added</span>';
+								echo '<span style="color:red;font-size:18px;font-weight:bold;">Sản Phẩm Đã Được Thêm</span>';
 							}
 						?>		
 				</div>
 			</div>
 			<div class="product-desc">
-				<h2>Product Details</h2>
+				<h2>Chi Tiết Sản Phẩm</h2>
 				<p><?php echo $fm->textShorten($result_details['product_desc'],150)?></p>	
 			</div>
 	</div>
@@ -57,7 +57,7 @@
 }
 	?>
 				<div class="rightsidebar span_3_of_1">
-					<h2>CATEGORIES</h2>
+					<h2>Danh Mục Sản Phẩm</h2>
 					<ul>
 				 		<?php
 						 	$getall_category = $cat->show_category_fontend();

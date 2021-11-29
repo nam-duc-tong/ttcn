@@ -6,7 +6,7 @@
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Latest from Iphone</h3>
+    		<h3>Iphone mới nhất</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -42,7 +42,7 @@
 			</div>
 			<div class="content_bottom">
     		<div class="heading">
-    		<h3>Latest from Acer</h3>
+    		<h3></h3>
     		</div>
     		<div class="clear"></div>
     	</div>

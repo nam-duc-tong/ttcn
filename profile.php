@@ -28,7 +28,7 @@
     	<div class="section group">
             <div class="content_top">
                 <div class="heading">
-                    <h3>Profile Customers</h3>
+                    <h3>Thông Tin Khách Hàng</h3>
                 </div>
     		<div class="clear"></div>
     	</div>
@@ -40,30 +40,30 @@
                         while($result = $get_customers->fetch_assoc()){
                 ?>
                 <tr>
-                    <td>Name</td>
+                    <td>Tên Khách Hàng</td>
                     <td>:</td>
                     <td><?php echo $result['name'] ?></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>City</td>
                     <td>:</td>
-                    <td><?php echo $result['city'] ?></td>
-                </tr>
+                    <td><?php  ?></td>
+                </tr> -->
                 <tr>
-                    <td>Phone</td>
+                    <td>Điện Thoại</td>
                     <td>:</td>
                     <td><?php echo $result['phone'] ?></td>
                 </tr>
-                <tr>
-                    <td>Country</td>
+                <!-- <tr>
+                    <td></td>
                     <td>:</td>
-                    <td><?php echo $result['country'] ?></td>
-                </tr>
-                <tr>
+                    <td><?php  ?></td>
+                </tr> -->
+                <!-- <tr>
                     <td>Zipcode</td>
                     <td>:</td>
-                    <td><?php echo $result['zipcode'] ?></td>
-                </tr>
+                    <td><?php  ?></td>
+                </tr> -->
                 <tr>
                     <td>Email</td>
                     <td>:</td>
@@ -71,12 +71,12 @@
                 </tr>
 
                 <tr>
-                    <td>Address</td>
+                    <td>Địa Chỉ</td>
                     <td>:</td>
                     <td><?php echo $result['address'] ?></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><a href="editprofile.php">Update Profile</a></td>
+                    <td colspan="3"><a href="editprofile.php">Cập Nhật Thông Tin</a></td>
                 </tr>
                 <?php                       
                         }

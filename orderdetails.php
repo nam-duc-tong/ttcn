@@ -41,7 +41,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2 style="width: 500px;">Your Details Ordered</h2>
+			    	<h2 style="width: 500px;">Chi Tiết Đơn Hàng</h2>
 					<?php		
 						if(isset($delcart)){
 							echo $delcart;

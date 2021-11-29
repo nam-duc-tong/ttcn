@@ -50,25 +50,26 @@
   <div class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
+				<!-- Thêm ảnh logo -->
+				<a href="index.php"><img src="" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form>
-				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+				    	<input type="text" value="Tìm Kiếm Sản Phẩm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm Kiếm Sản Phẩm';}"><input type="submit" value="Tìm Kiếm">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
 					<div class="cart">
-						<a href="#" title="View my shopping cart" rel="nofollow">
-								<span class="cart_title">Cart</span>
+						<a href="cart.php" title="Xem giỏ hàng" rel="nofollow">
+								<!-- <span class="cart_title">G</span> -->
 								<span class="no_product">
 									<?php
 									$check_cart = $ct->check_cart();
 									if($check_cart){
 										$sum = Session::get("sum");
 										$qty = Session::get("qty");
-										echo $sum.' d'.'-'.'Qty: '.$qty;
+										echo $sum.'VND'.' - '.'SL: '.$qty;
 									}
 									else{
 										echo 'Empty';
@@ -89,10 +90,10 @@
 			<?php
 				$login_check = Session::get('customer_login');
 				if($login_check==false){
-					echo '<a href="login.php">Login</a></div>';
+					echo '<a href="login.php">Đăng Nhập</a></div>';
 				}
 				else{
-					echo '<a href="?customer_Id='.Session::get('customer_Id').'">Logout</a></div>';
+					echo '<a href="?customer_Id='.Session::get('customer_Id').'">Đăng Xuất</a></div>';
 				}
 			?>
 		 
@@ -102,23 +103,23 @@
  </div>
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Home</a></li>
-	  <li><a href="products.php">Products</a> </li>
-	  <li><a href="topbrands.php">Top Brands</a></li>
+	  <li><a href="index.php">Trang Chủ</a></li>
+	  <!-- <li><a href="products.php"></a></li> -->
+	  <li><a href="topbrands.php">Sản Phẩm</a></li>
 		<?php
-			$check_cart = $ct->check_cart();
-			if($check_cart==true){
-				echo '<li><a href="cart.php">Cart</a></li>';
-			}
-			else{
-				echo '';
-			}
+			// $check_cart = $ct->check_cart();
+			// if($check_cart==true){
+			// 	echo '<li><a href="cart.php">Giỏ Hàng</a></li>';
+			// }
+			// else{
+			// 	echo '';
+			// }
 		?>
 		<?php
 		 $customer_Id = Session::get('customer_Id');
 			$check_order = $ct->check_order($customer_Id);
 			if($check_order==true){
-				echo '<li><a href="orderdetails.php">Order Details</a></li>';
+				echo '<li><a href="orderdetails.php">Chi Tiết Đơn Hàng</a></li>';
 			}
 			else{
 				echo '';
@@ -130,10 +131,10 @@
 			 echo '';
 		 } 
 		 else{
-			 echo '<li><a href="profile.php">Profile</a></li>';
+			 echo '<li><a href="profile.php">Thông Tin Khách Hàng</a></li>';
 		 }
 	  ?>
-	  <li><a href="contact.php">Contact</a> </li>
+	  <li><a href="contact.php">Liên Hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>
 </div>

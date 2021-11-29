@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>Training with live project &amp; All rights Reseverd </p>
+				<h3 style="color:white;">Thực Tập Chuyên Ngành</h3>
 		   </div>
      </div>
     </div>

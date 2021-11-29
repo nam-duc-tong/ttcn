@@ -14,7 +14,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Dell</h2>
 						<p><?php echo $resultDell['productName']?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $resultDell['productId']?>">Add to cart</a></span></div>
+						<div class="button"><span><a href="details.php?proId=<?php echo $resultDell['productId']?>">Thêm Giỏ Hàng</a></span></div>
 				   </div>
 			   </div>
 			   <?php			
@@ -33,7 +33,7 @@
 					<div class="text list_2_of_1">
 						  <h2>OPPO</h2>
 						  <p><?php echo $resultOppo['productName']?></p>
-						  <div class="button"><span><a href="details.php?proId=<?php echo $resultOppo['productId']?>">Add to cart</a></span></div>
+						  <div class="button"><span><a href="details.php?proId=<?php echo $resultOppo['productId']?>">Thêm Giỏ Hàng</a></span></div>
 					</div>
 				</div>
 				<?php			
@@ -54,7 +54,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Iphone</h2>
 						<p><?php echo $resultIP['productName']?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $resultIP['productId']?>">Add to cart</a></span></div>
+						<div class="button"><span><a href="details.php?proId=<?php echo $resultIP['productId']?>">Thêm Giỏ Hàng</a></span></div>
 				   </div>
 			   </div>			
 			   <?php
@@ -73,7 +73,7 @@
 					<div class="text list_2_of_1">
 						  <h2>SamSung</h2>
 						  <p><?php echo $resultSS['productName']?></p>
-						  <div class="button"><span><a href="details.php?proId=<?php echo $resultSS['productId']?>">Add to cart</a></span></div>
+						  <div class="button"><span><a href="details.php?proId=<?php echo $resultSS['productId']?>">Thêm Giỏ Hàng</a></span></div>
 					</div>
 				</div>
 				<?php

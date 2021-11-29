@@ -29,7 +29,7 @@
     	<div class="section group">
             <div class="content_top">
                 <div class="heading">
-                    <h3>Update Profile Customers</h3>
+                    <h3>Cập Nhật Thông Tin Khách Hàng</h3>
                 </div>
     		<div class="clear"></div>
     	</div>
@@ -50,7 +50,7 @@
                         while($result = $get_customers->fetch_assoc()){
                 ?>
                 <tr>
-                    <td>Name</td>
+                    <td>Tên Khách Hàng</td>
                     <td>:</td>
                     <td><input type="text" name="name" value="<?php echo $result['name']?>"></td>
                 </tr>
@@ -60,7 +60,7 @@
                     <td><input type="text" name="city" value="<?php echo $result['city']?>"></td>
                 </tr> -->
                 <tr>
-                    <td>Phone</td>
+                    <td>Số Điện Thoại</td>
                     <td>:</td>
                     <td><input type="text" name="phone" value="<?php echo $result['phone']?>"></td>
                 </tr>
@@ -71,11 +71,11 @@
                     // echo $result['country']
                     ?>"></td>
                 </tr> -->
-                <tr>
+                <!-- <tr>
                     <td>Zipcode</td>
                     <td>:</td>
                     <td><input type="text" name="zipcode" value="<?php echo $result['zipcode']?>"></td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Email</td>
                     <td>:</td>
@@ -83,12 +83,12 @@
                 </tr>
 
                 <tr>
-                    <td>Address</td>
+                    <td>Địa Chỉ</td>
                     <td>:</td>
                     <td><input type="text" name="address" value="<?php echo $result['address']?>"></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><input type="submit" name="save" value="Save"></td>
+                    <td colspan="3"><input type="submit" name="save" value="Lưu"></td>
                 </tr>
                 <?php                       
                         }
