@@ -3,8 +3,8 @@
 	// require_once 'inc/slider.php';	
 ?>
 <?php
-	if(isset($_GET['cartid'])){
-		$cartid = $_GET['cartid'];
+	if(isset($_GET['cartId'])){
+		$cartid = $_GET['cartId'];
 		$delcart = $ct->del_product_cart($cartid);
 	}
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
@@ -25,7 +25,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Your Cart</h2>
+			    	<h2>Giỏ Hàng</h2>
 					<?php
 						if(isset($update_quantity_cart)){
 							echo $update_quantity_cart;
@@ -38,12 +38,12 @@
 					?>
 						<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên Sản Phẩm</th>
+								<th width="15%">Hình Ảnh</th>
+								<th width="15%">Giá</th>
+								<th width="20%">Số Lượng</th>
+								<th width="20%">Tổng Tiền</th>
+								<th width="20%">Trạng Thái</th>
 							</tr>
 							<?php
 								$get_product_cart = $ct ->get_product_cart();
@@ -59,13 +59,13 @@
 								<td><?php echo $result['price']." VND"?></td>
 								<td>
 									<form action="" method="post">
-										<input type="hidden" name="cartid" value="<?php echo $result['cartid']?>"/>
+										<input type="hidden" name="cartid" value="<?php echo $result['cartId']?>"/>
 										<input type="number" name="quantity" min = "0" value="<?php echo $result['quantity']?>"/>
 										<input type="submit" name="submit" value="Update"/>
 									</form>
 								</td>
 								<td><?php $total = $result['price'] * $result['quantity']; echo $total." VND";?></td>
-								<td><a href="?cartid=<?php echo $result['cartid']?>">Xóa</a></td>
+								<td><a href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
 								
 							</tr>
 							<?php

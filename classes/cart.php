@@ -56,11 +56,11 @@
             WHERE cartId = '$cartid'";
             $result = $this->db->update($query);
             if($result){
-                $msg = "<span class ='success'>Product Quantity Updated Successfully</span>";
+                $msg = "<span class ='success'>Đơn hàng đã được cập nhật thành công</span>";
                 return $msg;
             }
             else{
-                $msg = "<span class='error'>Product Quantity Updated not Successfully</span>";
+                $msg = "<span class='error'>Đơn hàng đã được cập nhật thất bại</span>";
                 return $msg;
             }
         }
@@ -72,7 +72,7 @@
                 header('Location:cart.php');
             }
             else{
-                $msg = "<span class='error'>Product Deleted Not Successfully</span>";
+                $msg = "<span class='error'>Đã xóa đơn hàng</span>";
                 return $msg;
             }
         }

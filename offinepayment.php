@@ -81,7 +81,7 @@
                                         <?php echo $result['quantity']?>
 								</td>
 								<td><?php $total = $result['price'] * $result['quantity']; echo $total.' VND';?></td>	
-                                <td><a href="?cartid=<?php echo $result['cartid']?>">Xóa</a></td>
+                                <td><a href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
                             </tr>
 							<?php
 								$subtotal +=$total;

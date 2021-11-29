@@ -19,8 +19,8 @@
 
 ?>
 <?php
-	if(isset($_GET['cartid'])){
-		$cartid = $_GET['cartid'];
+	if(isset($_GET['cartId'])){
+		$cartid = $_GET['cartId'];
 		$delcart = $ct->del_product_cart($cartid);
 	}
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
@@ -49,14 +49,14 @@
 					?>
 						<table class="tblone">
 							<tr>
-								<th width="10%">ID</th>	
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="10%">Price</th>
-								<th width="10%">Quantity</th>
-								<th width="15%">Date</th>
-								<th width="15%">Status</th>
-								<th width="10%">Action</th>
+								<th width="10%">STT</th>	
+								<th width="20%">Tên Sản Phẩm</th>
+								<th width="10%">Ảnh</th>
+								<th width="10%">Giá</th>
+								<th width="10%">Số Lượng</th>
+								<th width="15%">Ngày Đặt</th>
+								<th width="15%">Trạng Thái</th>
+								<th width="5%"></th>
 							</tr>
 							<?php
 							 $customer_Id = Session::get('customer_Id');
@@ -96,7 +96,7 @@
 								}
 								else{
 								?>
-								<td><a href="?cartid=<?php echo $result['cartid']?>">Xóa</a></td>
+								<td><a href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
 								<?php
 							}
 								?>
