@@ -14,7 +14,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Product List</h2>
+        <h2>Danh Sách Sản Phẩm</h2>
         <div class="block">  
             <?php
                 if(isset($delpro)){
@@ -24,15 +24,15 @@
             <table class="data display datatable" id="example">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Product Name</th>
-					<th>Product Price</th>
-					<th>Product Image</th>
-                    <th>Category</th>
-					<th>Brand</th>
-					<th>Description</th>
-					<th>Type</th>
-					<th>Action</th>
+					<th>STT</th>
+					<th>Tên Sản Phẩm</th>
+					<th>Giá</th>
+					<th>Ảnh Sản Phẩm</th>
+                    <th>Danh Mục</th>
+					<th>Thương Hiệu</th>
+					<th>Mô Tả</th>
+					<th>Loại</th>
+					<th>Hành Động</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -63,7 +63,7 @@
                         }
                     ?></td>
 					
-					<td><a href="productedit.php?productId=<?php echo $result['productId']?>">Edit</a> || <a href="?productId=<?php echo $result['productId']?>">Delete</a></td>
+					<td><a href="productedit.php?productId=<?php echo $result['productId']?>">Sửa</a> || <a href="?productId=<?php echo $result['productId']?>">Xóa</a></td>
 				</tr>
 				<?php
                        }

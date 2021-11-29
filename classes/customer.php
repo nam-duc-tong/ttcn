@@ -13,15 +13,15 @@
         }      
         public function insert_customers($data){
             $name = mysqli_real_escape_string($this->db->link,$data['name']);
-            $city = mysqli_real_escape_string($this->db->link,$data['city']);
-            $zipcode = mysqli_real_escape_string($this->db->link,$data['zipcode']);
+            // $city = mysqli_real_escape_string($this->db->link,$data['city']);
+            // $zipcode = mysqli_real_escape_string($this->db->link,$data['zipcode']);
             $email = mysqli_real_escape_string($this->db->link,$data['email']);
             $address = mysqli_real_escape_string($this->db->link,$data['address']);
-            $country = mysqli_real_escape_string($this->db->link,$data['country']);
+            // $country = mysqli_real_escape_string($this->db->link,$data['country']);
             $phone = mysqli_real_escape_string($this->db->link,$data['phone']);
             $password = mysqli_real_escape_string($this->db->link,md5($data['password']));
 
-            if($name==""||$city==""||$zipcode==""||$email==""||$address==""||$country==""||$phone==""||$password==""){
+            if($name==""||$email==""||$address==""||$phone==""||$password==""){
                 $alert = "<span class='error'>Fields must be not empty</span>";
                 return $alert;
             }
@@ -34,14 +34,14 @@
                 }
                 else{
 
-                $query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password) VALUES ('$name', '$city', '$zipcode', '$email', '$address', '$country', '$phone','$password')";
+                $query = "INSERT INTO tbl_customer(name,email,address,phone,password) VALUES ('$name', '$email', '$address', '$phone','$password')";
                 $result = $this->db->insert($query);
                 if($result){
-                    $alert = "<span class='success'> Customer Created Successfully</span>";
+                    $alert = "<span class='success'> Tạo Tài Khoản Thành Công</span>";
                     return $alert;
                 }
                 else{
-                    $alert = "<span class='error'> Customer Created Not Successfully</span>";
+                    $alert = "<span class='error'> Tạo Tài Khoản Thất Bại</span>";
                     return $alert;
                 }
             }
@@ -51,7 +51,7 @@
        $email = mysqli_real_escape_string($this->db->link,$data['email']);
        $password = mysqli_real_escape_string($this->db->link,md5($data['password']));
         if($email==''||$password==''){
-            $alert = "<span class='error'> Email or Password must be not empty</span>";
+            $alert = "<span class='error'> Email hoặc mật khâu rkhoong đúng</span>";
             return $alert;
         }
         else{

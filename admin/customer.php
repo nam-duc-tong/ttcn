@@ -46,20 +46,20 @@
                             <input type="text" readonly = "readonly" value="<?php echo $result['name']?>" name="catName" class="medium"/>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>City</td>
                         <td>:</td>
                         <td>
                             <input type="text" readonly = "readonly" value="<?php echo $result['city']?>" name="catName" class="medium"/>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>Country</td>
                         <td>:</td>
                         <td>
                             <input type="text" readonly = "readonly" value="<?php echo $result['country']?>" name="catName" class="medium"/>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td>Address</td>
                         <td>:</td>
@@ -67,13 +67,13 @@
                             <input type="text" readonly = "readonly" value="<?php echo $result['address']?>" name="catName" class="medium"/>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>Zipcode</td>
                         <td>:</td>
                         <td>
                             <input type="text" readonly = "readonly" value="<?php echo $result['zipcode']?>" name="catName" class="medium"/>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td>Email</td>
                         <td>:</td>
