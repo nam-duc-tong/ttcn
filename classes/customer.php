@@ -66,7 +66,7 @@
                
             }
             else{
-                $alert = "<span class = 'error'> Email or password doesn't match</span>";
+                $alert = "<span class = 'error'>Email Hoặc Mật Khẩu Không Phù Hợp</span>";
                 return $alert;
         }
         }
@@ -86,7 +86,7 @@
             // $password = mysqli_real_escape_string($this->db->link,md5($data['password']));
 
             if($name==""||$zipcode==""||$email==""||$address==""||$phone==""){
-                $alert = "<span class='error'>Fields must be not empty</span>";
+                $alert = "<span class='error'>Các Trường Không Được Để Trống</span>";
                 return $alert;
             }
             else{

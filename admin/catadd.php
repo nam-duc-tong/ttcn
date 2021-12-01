@@ -28,12 +28,12 @@
                 <table class="form">
                     <tr>
                         <td>
-                            <input type="text" name="cat_name" class="medium" placeholder="Làm ơn thêm danh mục sản phẩm"/>
+                            <input type="text" name="cat_name" class="medium" placeholder="Thêm Danh Mục Sản Phẩm"/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" name="submit" value="save"/>
+                            <input type="submit" name="submit" value="Lưu"/>
                         </td>
                     </tr>
                 </table>

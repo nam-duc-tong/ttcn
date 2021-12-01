@@ -24,7 +24,7 @@ $ct = new cart();
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Inbox</h2>
+        <h2>Thư</h2>
         <div class="block">
             <?php
                 if(isset($shifted)){
@@ -39,14 +39,15 @@ $ct = new cart();
             <table class="data display datatable" id="example">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Order Time</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>CustomerID</th>
-                        <th>Address</th>
-                        <th>Action</th>
+                        <th>STT</th>
+                        <th>Ngày Đặt</th>
+                        <th>Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Giá</th>
+                        <th>ID Khách Hàng</th>
+                        <th>Địa chỉ</th>
+                        <th>Hoạt Động</th>
+                        <th>Trạng Thái</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,29 +67,10 @@ $ct = new cart();
                         <td><?php echo $result['quantity']?></td>
                         <td><?php echo $result['price'].' '.' VND'?></td>
                         <td><?php echo $result['customer_Id']?></td>
-                        <td><a href="customer.php?customerId=<?php echo $result['customer_Id']?>">View Customer</a></td>
+                        <td><a href="customer.php?customerId=<?php echo $result['customer_Id']?>">Thông Tin Khách hàng</a></td>
+                        <td><a href="productedit.php?productId=<?php echo $result['productId']?>">Sửa</a> || <a href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Xóa</a></td>
                         <td>
-                            <?php
-                                if($result['status']=='0')
-                                {
-                            ?>
-                                <a href="?shiftid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Đang xử lý</a>
-                            <?php
-                                }
-                                elseif($result['status']=='1'){       
-                                    ?>
-                                    <?php
-                                    echo 'Đang vận chuyển';
-                                ?>
-                                <?php
-                                }
-                                else
-                                {
-                                    ?>
-                                    <a href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Xóa</a>   
-                                  <?php
-                                }
-                                ?>
+                            <a href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Hủy</a>||<a href="">Nhận Đơn Hàng</a>  
                         </td>
                     </tr>
                     <?php                            

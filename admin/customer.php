@@ -27,7 +27,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Sửa Danh Mục</h2>
+        <h2>Thông Tin Khách Hàng</h2>
         
         <div class="block copyblock">
        
@@ -40,40 +40,19 @@
             <form action="" method="post">
                 <table class="form">
                     <tr>
-                        <td>Name</td>
+                        <td>Tên</td>
                         <td>:</td>
                         <td>
                             <input type="text" readonly = "readonly" value="<?php echo $result['name']?>" name="catName" class="medium"/>
                         </td>
                     </tr>
-                    <!-- <tr>
-                        <td>City</td>
-                        <td>:</td>
-                        <td>
-                            <input type="text" readonly = "readonly" value="<?php echo $result['city']?>" name="catName" class="medium"/>
-                        </td>
-                    </tr> -->
-                    <!-- <tr>
-                        <td>Country</td>
-                        <td>:</td>
-                        <td>
-                            <input type="text" readonly = "readonly" value="<?php echo $result['country']?>" name="catName" class="medium"/>
-                        </td>
-                    </tr> -->
                     <tr>
-                        <td>Address</td>
+                        <td>Địa Chỉ</td>
                         <td>:</td>
                         <td>
                             <input type="text" readonly = "readonly" value="<?php echo $result['address']?>" name="catName" class="medium"/>
                         </td>
                     </tr>
-                    <!-- <tr>
-                        <td>Zipcode</td>
-                        <td>:</td>
-                        <td>
-                            <input type="text" readonly = "readonly" value="<?php echo $result['zipcode']?>" name="catName" class="medium"/>
-                        </td>
-                    </tr> -->
                     <tr>
                         <td>Email</td>
                         <td>:</td>

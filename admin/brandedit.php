@@ -40,12 +40,12 @@
                 <table class="form">
                     <tr>
                         <td>
-                            <input type="text" value="<?php echo $result['brandName']?>" name="brandName" class="medium" placeholder="Sửa danh mục sản phẩm"/>
+                            <input type="text" value="<?php echo $result['brandName']?>" name="brandName" class="medium" placeholder="Sửa Thương Hiệu Sản Phẩm"/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" name="submit" value="update"/>
+                            <input type="submit" name="submit" value="Cập Nhật"/>
                         </td>
                     </tr>
                 </table>

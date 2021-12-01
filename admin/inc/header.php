@@ -75,7 +75,7 @@
         <div class="grid_12">
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="index.php"><span>Dashboard</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>Thông Tin Người Dùng</span></a></li>
+                <li class="ic-form-style"><a href="http://localhost/project_phone/admin/customer.php?customerId=6"><span>Thông Tin Khách Hàng</span></a></li>
 				<li class="ic-typography"><a href="changepassword.php"><span>Thay Đổi Mật Khẩu</span></a></li>
 				<li class="ic-grid-tables"><a href="inbox.php"><span>Thư</span></a></li>
                 <li class="ic-charts"><a href="http://localhost/project_phone/index.php"><span>Website</span></a></li>

@@ -56,11 +56,11 @@
             WHERE cartId = '$cartid'";
             $result = $this->db->update($query);
             if($result){
-                $msg = "<span class ='success'>Đơn hàng đã được cập nhật thành công</span>";
+                $msg = "<span class ='success'>Cập Nhật Giỏ Hàng Thành Công</span>";
                 return $msg;
             }
             else{
-                $msg = "<span class='error'>Đơn hàng đã được cập nhật thất bại</span>";
+                $msg = "<span class='error'>Cập Nhật Giỏ Hàng Thất Bại</span>";
                 return $msg;
             }
         }
@@ -139,11 +139,11 @@
             $query = "UPDATE tbl_order SET status = '1' WHERE Id = '$Id' AND date_order='$time' AND price = '$price'";
             $result = $this->db->update($query);
             if($result){
-                $msg = "<span class ='success'>Updated Order Successfully</span>";
+                $msg = "<span class ='success'>Cập Nhật Giỏ Hàng Thành Công</span>";
                 return $msg;
             }
             else{
-                $msg = "<span class='error'>Updated Order not Successfully</span>";
+                $msg = "<span class='error'>Cập Nhật Giỏ Hàng Thất Bại</span>";
                 return $msg;
             }
         }
@@ -156,11 +156,11 @@
              WHERE Id = '$Id' AND date_order='$time' AND price = '$price'";
             $result = $this->db->update($query);
             if($result){
-                $msg = "<span class ='success'>Delete Order Successfully</span>";
+                $msg = "<span class ='success'>Xóa Giỏ Hàng Thành Công</span>";
                 return $msg;
             }
             else{
-                $msg = "<span class='error'>Delete Order not Successfully</span>";
+                $msg = "<span class='error'>Xóa Giỏ Hàng Thất Bại</span>";
                 return $msg;
             }
         }

@@ -1,6 +1,6 @@
 <?php
 	require_once 'inc/header.php';
-	// require_once 'inc/slider.php';
+
 ?>
  <?php
 	 	$login_check = Session::get('customer_login');
@@ -12,16 +12,6 @@
 		 }
 	  ?>
 <?php
-	// if(!isset($_GET['proId'])||$_GET['proId']==NULL){
-    //     echo "<script>window.location = '404.php'<script>";
-    // }
-    // else{
-    //     $id = $_GET['proId'];
-    // }
-	// if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
-    //     $quantity = $_POST['quantity'];
-	// 	$Addtocart = $ct-> add_to_cart($quantity,$id);
-    // }
 ?>
 <style>
     h3.payment {
@@ -38,13 +28,11 @@
         border:1px solid #666;
         padding: 20px;
         background:cornsilk;
-        /* justify-content: space-between; */
     }
     .wrapper_method a{
         padding: 10px;
         background: red;
         color: #fff;
-        /* padding-right:2px; */
         margin-right:5px;
     }
     .wrapper_method a:hover{
@@ -63,15 +51,15 @@
     	<div class="section group">
             <div class="content_top">
                 <div class="heading">
-                    <h3>Payment Methods</h3>
+                    <h3>Phương Thức Thanh Toán</h3>
                 </div>
     		<div class="clear"></div>
             <div class="wrapper_method">
-                <h3 class="payment">Choose your method payment</h3>
-                 <a href="offinepayment.php">Offine Payment</a>
-                 <a href="onlinepayment.php">Online Payment</a>    
+                <h3 class="payment">Chọn Phương Thức Thanh Toán</h3>
+                 <a href="offinepayment.php">Thanh Toán Offine</a>
+                 <a href="onlinepayment.php">Thanh Toán Online</a>    
                 <div class="pre">
-                    <a href="cart.php" style="background:grey;"><< Previous</a>
+                    <a href="cart.php" style="background:grey;"><< Quay Lại</a>
                 </div>
             </div>
     	</div>

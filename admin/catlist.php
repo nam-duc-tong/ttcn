@@ -11,7 +11,7 @@
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Category List</h2>
+                <h2>Danh Sách Danh Mục Sản Phẩm</h2>
                 <div class="block">   
                     <?php
                         if(isset($delcat)){
@@ -21,9 +21,9 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>Category Name</th>
-							<th>Action</th>
+							<th>STT</th>
+							<th>Tên Danh Mục</th>
+							<th>Hoạt Động</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -37,7 +37,7 @@
 						<tr class="odd gradeX">
 							<td><?php echo $i;?></td>
 							<td><?php echo $result['catName']?></td>
-							<td><a href="catedit.php?catId=<?php echo $result['catId']?>">Edit</a> || <a onclick="return confirm('are you want to delete?')" href="?delid=<?php echo $result['catId']?>">Delete</a></td>
+							<td><a href="catedit.php?catId=<?php echo $result['catId']?>">Sửa</a> || <a onclick="return confirm('Bạn có muốn xóa không?')" href="?delid=<?php echo $result['catId']?>">Xóa</a></td>
 						</tr>
                             <?php
                             }   

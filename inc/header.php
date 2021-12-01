@@ -104,17 +104,7 @@
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  <li><a href="index.php">Trang Chủ</a></li>
-	  <!-- <li><a href="products.php"></a></li> -->
 	  <li><a href="topbrands.php">Sản Phẩm</a></li>
-		<?php
-			// $check_cart = $ct->check_cart();
-			// if($check_cart==true){
-			// 	echo '<li><a href="cart.php">Giỏ Hàng</a></li>';
-			// }
-			// else{
-			// 	echo '';
-			// }
-		?>
 		<?php
 		 $customer_Id = Session::get('customer_Id');
 			$check_order = $ct->check_order($customer_Id);

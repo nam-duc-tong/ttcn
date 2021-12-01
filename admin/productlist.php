@@ -56,10 +56,10 @@
                     
                     <td><?php
                         if($result['type']==0){
-                            echo 'Feathered';
+                            echo 'Hiển Thị';
                         }
                         else{
-                            echo 'Non-Feathered';
+                            echo 'Không Hiển Thị';
                         }
                     ?></td>
 					

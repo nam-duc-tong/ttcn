@@ -1,6 +1,5 @@
 <?php
 	require_once 'inc/header.php';
-	// require_once 'inc/slider.php';
 ?>
  <?php
 	 	$login_check = Session::get('customer_login');
@@ -12,16 +11,6 @@
 		 }
 	  ?>
 <?php
-	// if(!isset($_GET['proId'])||$_GET['proId']==NULL){
-    //     echo "<script>window.location = '404.php'<script>";
-    // }
-    // else{
-    //     $id = $_GET['proId'];
-    // }
-	// if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
-    //     $quantity = $_POST['quantity'];
-	// 	$Addtocart = $ct-> add_to_cart($quantity,$id);
-    // }
 ?>
  <div class="main">
     <div class="content">
@@ -44,26 +33,11 @@
                     <td>:</td>
                     <td><?php echo $result['name'] ?></td>
                 </tr>
-                <!-- <tr>
-                    <td>City</td>
-                    <td>:</td>
-                    <td><?php  ?></td>
-                </tr> -->
                 <tr>
                     <td>Điện Thoại</td>
                     <td>:</td>
                     <td><?php echo $result['phone'] ?></td>
                 </tr>
-                <!-- <tr>
-                    <td></td>
-                    <td>:</td>
-                    <td><?php  ?></td>
-                </tr> -->
-                <!-- <tr>
-                    <td>Zipcode</td>
-                    <td>:</td>
-                    <td><?php  ?></td>
-                </tr> -->
                 <tr>
                     <td>Email</td>
                     <td>:</td>

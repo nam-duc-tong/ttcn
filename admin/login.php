@@ -25,7 +25,7 @@ $adminPass = $adminUser = '';
     <div class="container">
         <section id="content">
             <form action="login.php" method="post">
-                <h1>Admin Login</h1>
+                <h1>Đăng Nhập Quản Trị Viên</h1>
                 <span>
                     <?php
                         if(isset($login_check)){
@@ -34,17 +34,17 @@ $adminPass = $adminUser = '';
                     ?>
                 </span>
                 <div>
-                    <input type="text" name="adminUser" placeholder="Username"/>
+                    <input type="text" name="adminUser" placeholder="Tên Người Dùng"/>
                 </div>
                 <div>
-                    <input type="password" name="adminPass" placeholder="Password"/>
+                    <input type="password" name="adminPass" placeholder="Mật Khẩu"/>
                 </div>
                 <div>
-                    <input type="submit" value="Log in" />
+                    <input type="submit" value="Đăng Nhập" />
                 </div>
             </form>
             <div class="button">
-                <a href="#">Traning with live project</a>
+                <a href="http://localhost/project_phone/orderdetails.php?id=live">Shop Bán Hàng</a>
             </div>
         </section>
     </div>

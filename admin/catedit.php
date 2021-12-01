@@ -45,7 +45,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" name="submit" value="update"/>
+                            <input type="submit" name="submit" value="Cập Nhật"/>
                         </td>
                     </tr>
                 </table>

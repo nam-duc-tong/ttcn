@@ -15,18 +15,18 @@
             $brandName = $this->fm->validation($brandName);
             $brandName = mysqli_real_escape_string($this->db->link,$brandName); 
             if(empty($brandName)){
-                $alert = "<span class= 'success'>brand must be not empty</span>";
+                $alert = "<span class= 'success'>Tên Thương Hiệu Không Được Để Trống</span>";
                 return $alert;
             }
             else{
                 $query = "INSERT INTO tbl_brand(brandName) VALUES('$brandName')";
                 $result = $this->db->insert($query);    
                 if($result){
-                    $alert = "<span class= 'success'>Insert brand Successfully</span>";
+                    $alert = "<span class= 'success'>Thêm Thương Hiệu Thành Công</span>";
                     return $alert;
                 }
                 else{
-                    $alert = "<span class= 'error'>Insert brand Not Success</span>";
+                    $alert = "<span class= 'error'>Thêm Thương Hiệu Thất Bại</span>";
                     return $alert;
                 }
             }
@@ -46,18 +46,18 @@
             $brandName = mysqli_real_escape_string($this->db->link,$brandName);
             $id = mysqli_real_escape_string($this->db->link,$id);
             if(empty($brandName)){
-                $alert = "<span class='error'>brand must be not empty</span>";
+                $alert = "<span class='error'>Tên Thương Hiệu Không Được Để Trống</span>";
                 return $alert;
             }
             else{
                 $query = "UPDATE tbl_brand SET brandName ='$brandName' WHERE brandId = '$id'";
                 $result = $this->db->update($query);
                 if($result){
-                    $alert = "<span class='success'>Cập nhật thương hiệu thành công</span>";
+                    $alert = "<span class='success'>Cập Nhật Thương Hiệu Thất Bại</span>";
                     return $alert;
                 }
                 else{
-                    $alert = "<span class='error'>Cập nhật thương hiệu thất bại</span>";
+                    $alert = "<span class='error'>Cập Nhật Thương Hiệu Thành Công</span>";
                     return $alert;
                 }
             }
@@ -66,11 +66,11 @@
             $query = "DELETE FROM tbl_brand WHERE brandId = '$id'";
             $result = $this->db->delete($query);
             if($result){
-                $alert = "<span class='success'>Xóa thương hiệu thành công </span>";
+                $alert = "<span class='success'>Xóa Thương Hiệu Thành Công</span>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'error'>Xóa thương hiệu thất bại</span>";
+                $alert = "<span class = 'error'>Xóa Thương Hiệu Thất Bại</span>";
                 return $alert;
             }
         }

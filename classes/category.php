@@ -15,18 +15,18 @@
             $catName = $this->fm->validation($catName);
             $catName = mysqli_real_escape_string($this->db->link,$catName); 
             if(empty($catName)){
-                $alert = "<span class= 'success'>Category must be not empty</span>";
+                $alert = "<span class= 'success'>Danh Mục Sản Phẩm Không Được Để Trống</span>";
                 return $alert;
             }
             else{
                 $query = "INSERT INTO tbl_category(catName) VALUES('$catName')";
                 $result = $this->db->insert($query);    
                 if($result){
-                    $alert = "<span class= 'success'>Insert Category Successfully</span>";
+                    $alert = "<span class= 'success'>Thêm Danh Mục Sản Phẩm Thành Công</span>";
                     return $alert;
                 }
                 else{
-                    $alert = "<span class= 'error'>Insert Category Not Success</span>";
+                    $alert = "<span class= 'error'>Thêm Danh Mục Sản Phẩm Thành Công</span>";
                     return $alert;
                 }
             }
@@ -46,18 +46,18 @@
             $catName = mysqli_real_escape_string($this->db->link,$catName);
             $id = mysqli_real_escape_string($this->db->link,$id);
             if(empty($catName)){
-                $alert = "<span class='error'>category must be not empty</span>";
+                $alert = "<span class='error'>Danh Mục Sản Phẩm Không Đươc Để Trống</span>";
                 return $alert;
             }
             else{
                 $query = "UPDATE tbl_category SET catName ='$catName' WHERE catId = '$id'";
                 $result = $this->db->update($query);
                 if($result){
-                    $alert = "<span class='success'>Category Update Successfully</span>";
+                    $alert = "<span class='success'>Cập Nhật Danh Mục Sản Phẩm Thành Công</span>";
                     return $alert;
                 }
                 else{
-                    $alert = "<span class='error'>Category Updated Not Success</span>";
+                    $alert = "<span class='error'>Cập Nhật Danh Mục Sản Phẩm Thành Công</span>";
                     return $alert;
                 }
             }
@@ -66,11 +66,11 @@
             $query = "DELETE FROM tbl_category WHERE catId = '$id'";
             $result = $this->db->delete($query);
             if($result){
-                $alert = "<span class='success'> Category Deleted SuccessLy</span>";
+                $alert = "<span class='success'>Xóa Danh Mục Sản Phẩm Thành Công</span>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'error'> Category  Delete NOT Success</span>";
+                $alert = "<span class = 'error'>Xóa Danh Mục Sản Phẩm Không Thành Công</span>";
                 return $alert;
             }
         }

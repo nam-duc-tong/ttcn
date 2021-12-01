@@ -31,7 +31,7 @@
             $uploaded_image = "uploads/".$unique_image;
 
             if($productName==""||$brand==""||$category==""||$product_desc==""||$price==""||$type==""||$file_name==""){
-                $alert = "<span class='error'>Fields must be not empty</span>";
+                $alert = "<span class='error'>Các Trường Không Được Để Trống</span>";
                 return $alert;
             }
             else{
@@ -39,11 +39,11 @@
                   $query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
                 $result = $this->db->insert($query);    
                 if($result){
-                    $alert = "<span class= 'success'>Insert Product Successfully</span>";
+                    $alert = "<span class= 'success'>Thêm Sản Phẩm Thành Công</span>";
                     return $alert;
                 }   
                 else{
-                    $alert = "<span class= 'error'>Insert Product Not Success</span>";
+                    $alert = "<span class= 'error'>Thêm Sản Phẩm Thất Bại</span>";
                     return $alert;
                 }
             }
@@ -84,18 +84,18 @@
             $uploaded_image = "uploads/".$unique_image;
 
             if($productName==""||$brand==""||$category==""||$product_desc==""||$price==""||$type==""){
-                $alert = "<span class='error'>Fields must be not empty</span>";
+                $alert = "<span class='error'>Các Trường Không Được Để Trống</span>";
                 return $alert;
             }
             else{
                 if(!empty($file_name)){
                     //neu nguoi dung chon anh
                     if($file_size>20480){
-                        $alert = "<span class='success'>Image Size should be less than 2MB!</span>";
+                        $alert = "<span class='success'>Kích Thước Ảnh Phải Quá Lớn</span>";
                         return $alert;
                     }
                     elseif(in_array($file_ext,$permited)===false){
-                        $alert = "<span class='error'>You can upload only:-".implode(',',$permited)."</span>";
+                        $alert = "<span class='error'>Bạn Chỉ Có Thể Tải Lên:-".implode(',',$permited)."</span>";
                         return $alert;
                     }
                     move_uploaded_file($file_temp,$uploaded_image);
@@ -110,11 +110,11 @@
                      WHERE productId = '$id'";
                        $result = $this->db->update($query);
                        if($result){
-                           $alert = "<span class='success'>product Update Successfully</span>";
+                           $alert = "<span class='success'>Cập Nhật Sản Phẩm Thành Công</span>";
                            return $alert;
                        }
                        else{
-                           $alert = "<span class='error'>product Updated Not Success</span>";
+                           $alert = "<span class='error'>Cập Nhật Sản Phẩm Thất Bại</span>";
                            return $alert;
                        }
                 }
@@ -133,11 +133,11 @@
                         WHERE productId = '$id'";
                          $result = $this->db->update($query);
                          if($result){
-                             $alert = "<span class='success'>product Update Successfully</span>";
+                             $alert = "<span class='success'>Cập Nhật Sản Phẩm Thành Công</span>";
                              return $alert;
                          }
                          else{
-                             $alert = "<span class='error'>product Updated Not Success</span>";
+                             $alert = "<span class='error'>Cập Nhật Sản Phẩm Thất Bại</span>";
                              return $alert;
                          }
                     }
@@ -150,11 +150,11 @@
             $query = "DELETE FROM tbl_product WHERE productId = '$id'";
             $result = $this->db->delete($query);
             if($result){
-                $alert = "<span class='success'> Product Deleted SuccessLy</span>";
+                $alert = "<span class='success'>Xóa Sản Phẩm Thành Công</span>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'error'> Product  Delete NOT Success</span>";
+                $alert = "<span class = 'error'>Xóa Sản Phẩm Thất Bại</span>";
                 return $alert;
             }
         }

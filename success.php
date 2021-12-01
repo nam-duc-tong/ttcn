@@ -30,7 +30,7 @@
 <div class="main">
     <div class="content">
     	<div class="section group">
-        <h2 class="success_order">Success Order</h2>
+        <h2 class="success_order">Đặt Hàng Thành Công</h2>
         <?php 
 		 $customer_Id = Session::get('customer_Id');
             $get_amount = $ct->getAmountPrice($customer_Id);

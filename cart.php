@@ -108,7 +108,7 @@
 					   <?php
 								}
 								else{
-									echo 'Your cart is empty! please  shopping now';
+									echo 'Giỏ Hàng Của Bạn Hiện Tại Đang Trống';
 								}  
 						?>
 					</div>
