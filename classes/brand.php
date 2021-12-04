@@ -53,11 +53,11 @@
                 $query = "UPDATE tbl_brand SET brandName ='$brandName' WHERE brandId = '$id'";
                 $result = $this->db->update($query);
                 if($result){
-                    $alert = "<span class='success'>Cập Nhật Thương Hiệu Thất Bại</span>";
+                    $alert = "<span class='success'>Cập Nhật Thương Hiệu Thành Công</span>";
                     return $alert;
                 }
                 else{
-                    $alert = "<span class='error'>Cập Nhật Thương Hiệu Thành Công</span>";
+                    $alert = "<span class='error'>Cập Nhật Thương Hiệu Thất Bại</span>";
                     return $alert;
                 }
             }

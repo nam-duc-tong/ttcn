@@ -5,11 +5,11 @@ session_start();
 <?php
 
 $adminPass = $adminUser = ''; 
-    $class = new adminlogin();
+    $class = new adminlogin();//gọi class trong adminlogin
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $adminUser = $_POST['adminUser'];
-        $adminPass = md5($_POST['adminPass']);
-        $login_check = $class->login_admin($adminUser,$adminPass);
+        $adminUser = $_POST['adminUser'];//gọi admin user từ localhost
+        $adminPass = md5($_POST['adminPass']);//goi admin user từ localhost
+        $login_check = $class->login_admin($adminUser,$adminPass);//gọi hàm
     }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $adminPass = $adminUser = '';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Đăng Nhập</title>
     <link rel="stylesheet" type="text/css" href="css/stylelogin.css" media="screen" />
 </head>
 <body>
@@ -28,7 +28,7 @@ $adminPass = $adminUser = '';
                 <h1>Đăng Nhập Quản Trị Viên</h1>
                 <span>
                     <?php
-                        if(isset($login_check)){
+                        if(isset($login_check)){//mếu login check đúng 
                             echo $login_check;
                         }
                     ?>

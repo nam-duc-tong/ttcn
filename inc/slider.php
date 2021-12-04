@@ -26,16 +26,26 @@
 					if($getLastOPPO){
 						while($resultOppo = $getLastOPPO->fetch_assoc()){
 				?>		
-				<div class="listview_1_of_2 images_1_of_2"style="height: 137px;">
+				<!-- <div class="listview_1_of_2 images_1_of_2"style="height: 137px;">
 					<div class="listimg listimg_2_of_1">
-						  <a href="details.php"><img src="admin/uploads/<?php echo $resultOppo['image']?>" alt=""  style="height:100px;" /></a>
+						  <a href="details.php"><img src="admin/uploads/<?php //echo $resultOppo['image']?>" alt=""  style="height:100px;"/></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h2>OPPO</h2>
-						  <p><?php echo $resultOppo['productName']?></p>
-						  <div class="button"><span><a href="details.php?proId=<?php echo $resultOppo['productId']?>">Thêm Giỏ Hàng</a></span></div>
+						  <p><?php //echo $resultOppo['productName']?></p>
+						  <div class="button"><span><a href="details.php?proId=<?php //echo $resultOppo['productId']?>">Thêm Giỏ Hàng</a></span></div>
 					</div>
-				</div>
+				</div> -->
+				<div class="listview_1_of_2 images_1_of_2"style="height: 137px;">
+					<div class="listimg listimg_2_of_1">
+						 <a href="details.php"> <img src="admin/uploads/<?php echo $resultOppo['image']?>" alt="" style="height:100px;"/></a>
+					</div>
+				    <div class="text list_2_of_1">
+						<h2>OPPO</h2>
+						<p><?php echo $resultOppo['productName']?></p>
+						<div class="button"><span><a href="details.php?proId=<?php echo $resultOppo['productId']?>">Thêm Giỏ Hàng</a></span></div>
+				   </div>
+			   </div>
 				<?php			
 					}
 				}  

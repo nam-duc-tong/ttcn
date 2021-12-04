@@ -1,5 +1,6 @@
 <?php
     class Session{
+        //lưu các phiên dao dịch
         public static function init(){
             if(version_compare(phpversion(),'8.0.9','<')){
                 if(session_id() == ''){
@@ -23,6 +24,7 @@
                 return false;
             }
         }
+        //kiểm tra phiên làm việc có tồn tại hay không
         public static function checkSession(){
             self::init();
             if(self::get("adminlogin") == false){
@@ -30,12 +32,14 @@
                 header("Location:login.php");
             }
         }
+        //kiểm tra đăng nhập
         public static function checkLogin(){
             self::init();
             if(self::get("adminlogin")==true){
                 header("Location: index.php");
             }
         }
+        //xóa/hủy phiên làm việc
         public static function destroy(){
             session_destroy();
             header("Location:login.php");

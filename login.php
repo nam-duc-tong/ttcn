@@ -1,6 +1,5 @@
 <?php
 // Session_start();
-
 	require_once 'inc/header.php';
 	// require_once 'inc/slider.php';
 ?>
@@ -75,14 +74,12 @@
 		    		</tbody>
 					</table> 
 		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Tạo Tài Khoản" style="background-color:#fff;color: #000; padding: 10px;"></input></div></div>
-		   
 		    <div class="clear"></div>
 		    </form>
     	</div>  	
        <div class="clear"></div>
     </div>
  </div>
- 
 <?php
 	require_once 'inc/footer.php';
 ?>

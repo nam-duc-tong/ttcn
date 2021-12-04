@@ -12,6 +12,7 @@
             return $text;
         }
         //kiem tra form co trong hay ko
+        //kiểm tra xem các biến có hợp lệ hay không
         public function validation($data){
             $data = trim($data);
             $data = stripslashes($data);
