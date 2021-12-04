@@ -1,7 +1,7 @@
 
 	<div class="header_bottom">
 		<div class="header_bottom_left"style="margin-top:4px;">
-			<div class="section group">
+			<div class="section group" style="height: 165px;" >
 				<?php
 					$getLastDell = $product->getLastestDell();
 					if($getLastDell){
