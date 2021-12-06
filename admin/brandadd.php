@@ -12,6 +12,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $brandName = $_POST['brandName'];
         $insertBrand = $brand->insert_brand($brandName);
+        //class brand tro tới hàm inseert brand
     }
 ?>
 <div class="grid_10">

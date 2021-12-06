@@ -542,13 +542,13 @@ body {
   .stat-col{float:left; margin:0px; margin-right:30px;}
   .stat-col span{font-weight:bold; font-size:1.1em; font-family:Helvetica Neue, Arial;}
   .stat-col p{font-family:Helvetica Neue, Arial; font-size:3em; color:#fff; font-weight:bold; text-shadow: 1px 1px 0px rgba(27, 27, 27, 0.4); filter: dropshadow(color=#1b1b1b, offx=1, offy=1) /* IE */
-		-moz-border-radius: 4px; /* Firefox */
-		-webkit-border-radius: 4px; /* Safari, Chrome */
-		border-radius: 4px; /* CSS3 */
-		line-height:1.1em;
-		padding:4px 12px; 
-		margin-bottom:10px;
-		margin-top:4px;
+		/* -moz-border-radius: 4px; Firefox */
+		/* -webkit-border-radius: 4px; Safari, Chrome */
+		/* border-radius: 4px; CSS3 */
+		/* line-height:1.1em; */
+		/* padding:4px 12px;  */
+		/* margin-bottom:10px; */
+		/* margin-top:4px; */
 		}
   
   
@@ -1159,3 +1159,7 @@ body {
   
   .gallery-sand .sorting{background-color:white !important;}
   table.form select{width:200px;}
+
+.error{
+	color: red;
+}

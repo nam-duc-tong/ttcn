@@ -5,7 +5,7 @@
 <?php
 	require_once 'lib/database.php';
 	require_once 'helpers/dbhelper.php';
-
+	// hàm tự động lấy lớp
 	spl_autoload_register(function($className){
 		include_once "classes/".$className.".php";
 	});

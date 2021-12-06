@@ -56,9 +56,11 @@
                         <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo Session::get('adminName')?></li>
+                            <li>Xin Chào <?php echo Session::get('adminName')?></li>
+                            <!-- adminName: Gọi tên từ csdl -->
                             <?php
                             if(isset($_GET['action'])&&$_GET['action']=='logout'){
+                                //nếu tồn tại thì sẽ hủy
                                 Session::destroy();
                             }
                             ?>
@@ -74,7 +76,7 @@
         </div>
         <div class="grid_12">
             <ul class="nav main">
-                <li class="ic-dashboard"><a href="index.php"><span>Dashboard</span></a> </li>
+                <li class="ic-dashboard"><a href="index.php"><span>Bảng Điều Khiển</span></a> </li>
                 <li class="ic-form-style"><a href="http://localhost/project_phone/admin/customer.php?customerId=6"><span>Thông Tin Khách Hàng</span></a></li>
 				<li class="ic-typography"><a href="changepassword.php"><span>Thay Đổi Mật Khẩu</span></a></li>
 				<li class="ic-grid-tables"><a href="inbox.php"><span>Thư</span></a></li>

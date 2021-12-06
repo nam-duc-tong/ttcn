@@ -5,6 +5,7 @@
 ?>
 <?php
     class user{  
+        //xử lí đăng kí đăng nhâp, đặt hàng
         private $fm;
         private $db;
         public function __construct(){

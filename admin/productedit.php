@@ -11,7 +11,7 @@
     else{
         $id = $_GET['productId'];
     }
-    if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])){
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){//nếu ai đó nhấn vào nút submit (Cập nhật) thì sẽ thực hiện lệnh dưới
         $updateProduct = $pd ->update_product($_POST,$_FILES,$id);
     } 
 ?>
@@ -47,7 +47,7 @@
                     </td>
                     <td>
                         <select id="select" name="category">
-                            <option>-------Chọn Danh Mục Sản Phẩm--------</option>
+                            <option>---Chọn Danh Mục Sản Phẩm---</option>
                             <?php
                                 $cat = new category();
                                 $catlist = $cat->show_category();
@@ -74,7 +74,7 @@
                     </td>
                     <td>
                         <select id="select" name="brand">
-                            <option>-------Chọn Tên Thương Hiệu-------</option>
+                            <option>---Chọn Tên Thương Hiệu---</option>
                             <?php
                                 $brand = new brand();
                                 $brandlist = $brand->show_brand();
@@ -133,15 +133,15 @@
                         <select id="select" name="type">
                             <option>Chọn Loại Sản Phẩm</option>
                             <?php
-                                if($result_product['type']==0){                               
+                                if($result_product['type']==1){                               
                             ?>
-                            <option selected value="0">Hiển Thị</option>
-                            <option value="1">Không Hiển Thị</option>
+                            <option selected value="1">Hiển Thị</option>
+                            <option value="0">Không Hiển Thị</option>
                             <?php
                                  }else{
                             ?>
-                            <option value="0">Hiển Thị</option>
-                            <option selected value="1">Không Hiển Thị</option>
+                            <option value="1">Hiển Thị</option>
+                            <option selected value="0">Không Hiển Thị</option>
                                 <?php
                                  }
                                 ?>

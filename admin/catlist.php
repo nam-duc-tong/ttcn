@@ -35,9 +35,11 @@
                                     $i++;
                         ?>
 						<tr class="odd gradeX">
-							<td><?php echo $i;?></td>
+                            <!-- số thứ tự -->
+                            <td><?php echo $i;?></td>
+                            <!-- Tên danh muc -->
 							<td><?php echo $result['catName']?></td>
-							<td><a href="catedit.php?catId=<?php echo $result['catId']?>">Sửa</a> || <a onclick="return confirm('Bạn có muốn xóa không?')" href="?delid=<?php echo $result['catId']?>">Xóa</a></td>
+							<td><a href="catedit.php?catId=<?php echo $result['catId']?>">Sửa</a>||<a onclick="return confirm('Bạn có muốn xóa không?')" href="?delid=<?php echo $result['catId']?>">Xóa</a></td>
 						</tr>
                             <?php
                             }   
@@ -51,7 +53,6 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 	    setupLeftMenu();
-
 	    $('.datatable').dataTable();
 	    setSidebarHeight();
 	});

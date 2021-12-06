@@ -3,18 +3,18 @@
 		<div class="header_bottom_left"style="margin-top:4px;">
 			<div class="section group" style="height: 165px;" >
 				<?php
-					$getLastDell = $product->getLastestDell();
-					if($getLastDell){
-						while($resultDell = $getLastDell->fetch_assoc()){
+					$getLastApple = $product->getLastestApple();
+					if($getLastApple){
+						while($resultApple = $getLastApple->fetch_assoc()){
 				?>
 				<div class="listview_1_of_2 images_1_of_2"style="height: 137px;">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php"> <img src="admin/uploads/<?php echo $resultDell['image']?>" alt="" style="height:100px;"/></a>
+						 <a href="details.php"> <img src="admin/uploads/<?php echo $resultApple['image']?>" alt="" style="height:100px;"/></a>
 					</div>
 				    <div class="text list_2_of_1">
-						<h2>Dell</h2>
-						<p><?php echo $resultDell['productName']?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $resultDell['productId']?>">Thêm Giỏ Hàng</a></span></div>
+						<h2>Apple</h2>
+						<p><?php echo $resultApple['productName']?></p>
+						<div class="button"><span><a href="details.php?proId=<?php echo $resultApple['productId']?>"style="font-size: 10px;">Thêm Giỏ Hàng</a></span></div>
 				   </div>
 			   </div>
 			   <?php			
@@ -43,7 +43,7 @@
 				    <div class="text list_2_of_1">
 						<h2>OPPO</h2>
 						<p><?php echo $resultOppo['productName']?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $resultOppo['productId']?>">Thêm Giỏ Hàng</a></span></div>
+						<div class="button"><span><a href="details.php?proId=<?php echo $resultOppo['productId']?>" style="font-size: 10px;">Thêm Giỏ Hàng</a></span></div>
 				   </div>
 			   </div>
 				<?php			
@@ -64,7 +64,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Iphone</h2>
 						<p><?php echo $resultIP['productName']?></p>
-						<div class="button"><span><a href="details.php?proId=<?php echo $resultIP['productId']?>">Thêm Giỏ Hàng</a></span></div>
+						<div class="button"><span><a href="details.php?proId=<?php echo $resultIP['productId']?>" style="font-size: 10px;">Thêm Giỏ Hàng</a></span></div>
 				   </div>
 			   </div>			
 			   <?php
@@ -83,7 +83,7 @@
 					<div class="text list_2_of_1">
 						  <h2>SamSung</h2>
 						  <p><?php echo $resultSS['productName']?></p>
-						  <div class="button"><span><a href="details.php?proId=<?php echo $resultSS['productId']?>">Thêm Giỏ Hàng</a></span></div>
+						  <div class="button"><span><a href="details.php?proId=<?php echo $resultSS['productId'] ?>" style="font-size: 10px;" >Thêm Giỏ Hàng</a></span></div>
 					</div>
 				</div>
 				<?php

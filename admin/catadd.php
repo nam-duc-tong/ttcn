@@ -20,6 +20,7 @@
         
         <div class="block copyblock">
         <?php
+        //nếu tồn tại insertcart thì sẽ echo nó 
         if(isset($insertCat)){
             echo $insertCat;
         }

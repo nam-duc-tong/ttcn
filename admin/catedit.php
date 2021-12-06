@@ -10,6 +10,7 @@
 <?php
     $cat = new category();
     if(!isset($_GET['catId']) || $_GET['catId']==NULL){
+        //quay về trang catlist.php
         echo "<script>window.location ='catlist.php'</script>";
     }
     else{
@@ -17,6 +18,7 @@
     }
     
     if($_SERVER['REQUEST_METHOD'] =='POST'){
+        //nếu phương thức yếu cầu = yêu cầu được gửi thì 
         $catName = $_POST['catName'];
         $updatecat = $cat->update_category($catName,$id);
     }
@@ -34,6 +36,7 @@
         <?php
             $get_cate_name = $cat->getcatbyid($id);
             if($get_cate_name){
+                // nếu đã lấy ra được giá trị rồi 
                 while($result = $get_cate_name->fetch_assoc()){
         ?>
             <form action="" method="post">

@@ -7,7 +7,7 @@
 <?php
     $pd = new product();
     $fm = new format();
-    if(isset($_GET['productId'])){
+    if(isset($_GET['productId'])){//nếu có product id thì sẽ gán biến id vào $get productid
         $id = $_GET['productId'];
         $delpro = $pd->del_product($id);
     }
@@ -56,10 +56,10 @@
                     
                     <td><?php
                         if($result['type']==0){
-                            echo 'Hiển Thị';
+                            echo 'Không Hiển Thị';
                         }
                         else{
-                            echo 'Không Hiển Thị';
+                            echo 'Hiển Thị'; 
                         }
                     ?></td>
 					

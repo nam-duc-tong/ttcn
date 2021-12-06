@@ -11,14 +11,16 @@
             $this->db = new Database();
             $this->fm = new format();
         }
+        //thêm danh muc san pham
         public function insert_category($catName){
             $catName = $this->fm->validation($catName);
             $catName = mysqli_real_escape_string($this->db->link,$catName); 
             if(empty($catName)){
-                $alert = "<span class= 'success'>Danh Mục Sản Phẩm Không Được Để Trống</span>";
+                $alert = "<span class= 'error'>Danh Mục Sản Phẩm Không Được Để Trống</span>";
                 return $alert;
             }
             else{
+                //câu lệnh chèn danh mục sản phẩm
                 $query = "INSERT INTO tbl_category(catName) VALUES('$catName')";
                 $result = $this->db->insert($query);    
                 if($result){
@@ -26,17 +28,19 @@
                     return $alert;
                 }
                 else{
-                    $alert = "<span class= 'error'>Thêm Danh Mục Sản Phẩm Thành Công</span>";
+                    $alert = "<span class= 'error'>Thêm Danh Mục Sản Phẩm thất bại</span>";
                     return $alert;
                 }
             }
         }
         public function show_category(){
-            $query = "SELECT * from  tbl_category order by catId desc";
+            $query = "SELECT * from  tbl_category order by catId desc"; 
+            //desc sắp xếp theo thứ tự giảm dần 
             $result = $this->db->select($query);
             return $result;
         }
         public function getcatbyid($id){
+            //chọn tât cả các danh mục có catId = id;
             $query = "SELECT * FROM tbl_category where catId = '$id'";
             $result = $this->db->select($query);
             return $result;

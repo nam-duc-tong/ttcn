@@ -1,5 +1,7 @@
 <?php
+
  $filepath = realpath(dirname(__FILE__));
+    //dường dẫn thực
  include_once ($filepath.'/../lib/database.php');
  include_once ($filepath.'/../helpers/dbhelper.php');
 ?>
@@ -12,7 +14,6 @@
             $this->fm = new format();
         }                                                                                                   
         public function insert_product($data,$files){
-           
             $productName = mysqli_real_escape_string($this->db->link,$data['productName']);
             $brand = mysqli_real_escape_string($this->db->link,$data['brand']);
             $category = mysqli_real_escape_string($this->db->link,$data['category']);
@@ -24,17 +25,16 @@
             $file_name = $_FILES['image']['name'];
             $file_size = $_FILES['image']['size'];
             $file_temp = $_FILES['image']['tmp_name'];
-
             $div = explode('.',$file_name);
             $file_ext = strtolower(end($div));
             $unique_image = substr(md5(time()),0,10).'.'.$file_ext;
             $uploaded_image = "uploads/".$unique_image;
-
             if($productName==""||$brand==""||$category==""||$product_desc==""||$price==""||$type==""||$file_name==""){
                 $alert = "<span class='error'>Các Trường Không Được Để Trống</span>";
                 return $alert;
             }
             else{
+                //lấy hình ảnh cho vào file upload
                 move_uploaded_file($file_temp,$uploaded_image); 
                   $query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
                 $result = $this->db->insert($query);    
@@ -51,6 +51,11 @@
         public function show_product(){
 
             $query = "SELECT tbl_product.*,tbl_category.catName, tbl_brand.brandName
+            -- chọn cột product lấy tất cả
+            -- chọn cột category lấy catName
+            -- chọn cột brand lấy brandname
+            -- từ table product 
+            -- inner join  
             from  tbl_product INNER JOIN tbl_category ON tbl_product.catId = tbl_category.catId
             INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId order by tbl_product.productId desc";
             // $query = "SELECT * from  tbl_product order by productId desc";
@@ -64,7 +69,8 @@
             return $result;
         }
 
-        public function update_product($data,$files,$id){          
+        public function update_product($data,$files,$id){        
+            //lấy dữ liệu  
             $productName = mysqli_real_escape_string($this->db->link,$data['productName']);
             $brand = mysqli_real_escape_string($this->db->link,$data['brand']);
             $category = mysqli_real_escape_string($this->db->link,$data['category']);
@@ -72,17 +78,17 @@
             $price = mysqli_real_escape_string($this->db->link,$data['price']);
             $type = mysqli_real_escape_string($this->db->link,$data['type']);
             //kiem tra hinh anh va lay hinh anh cho vao folder uploads
-
+            //chỉ cho phép file có đuôi chấm....
             $permited = array('jpg','jpeg','png','gif');
-            $file_name = $_FILES['image']['name'];
-            $file_size = $_FILES['image']['size'];
-            $file_temp = $_FILES['image']['tmp_name'];
+            $file_name = $_FILES['image']['name'];//tên ảnh
+            $file_size = $_FILES['image']['size'];//kích thước hình ảnh
+            $file_temp = $_FILES['image']['tmp_name']; //file tạm để lưu hình ảnh
 
             $div = explode('.',$file_name);
-            $file_ext = strtolower(end($div));
+            $file_ext = strtolower(end($div));//chuyển tất cả chữ hoa thành chữ thường
             $unique_image = substr(md5(time()),0,10).'.'.$file_ext;
             $uploaded_image = "uploads/".$unique_image;
-
+            //nếu trống
             if($productName==""||$brand==""||$category==""||$product_desc==""||$price==""||$type==""){
                 $alert = "<span class='error'>Các Trường Không Được Để Trống</span>";
                 return $alert;
@@ -90,11 +96,11 @@
             else{
                 if(!empty($file_name)){
                     //neu nguoi dung chon anh
-                    if($file_size>20480){
+                    if($file_size>20480){//kiểm tra kích cơ file hịnh anh
                         $alert = "<span class='success'>Kích Thước Ảnh Phải Quá Lớn</span>";
                         return $alert;
                     }
-                    elseif(in_array($file_ext,$permited)===false){
+                    elseif (in_array($file_ext,$permited)===false){
                         $alert = "<span class='error'>Bạn Chỉ Có Thể Tải Lên:-".implode(',',$permited)."</span>";
                         return $alert;
                     }
@@ -160,13 +166,13 @@
         }
     
         public function getproduct_feathered(){
-            $query = "SELECT * FROM tbl_product where type = '0'";
+            $query = "SELECT * FROM tbl_product where type = '1' order by productId limit 4";
             $result = $this->db->select($query);
             return $result;
         }
         
         public function getproduct_new(){
-            $query = "SELECT * FROM tbl_product order by productId desc LIMIT 4";
+            $query = "SELECT * FROM tbl_product order by productId  desc LIMIT 4";
             $result = $this->db->select($query);
             return $result;
         }
@@ -179,13 +185,13 @@
             $result = $this->db->select($query);
             return $result;
         }
-        public function getLastestDell(){
-            $query = "SELECT * FROM tbl_product WHERE brandId = '14' order by productId desc LIMIT 1";
+        public function getLastestApple(){
+            $query = "SELECT * FROM tbl_product WHERE brandId = '18' order by productId desc LIMIT 1";
             $result = $this->db->select($query);
             return $result;
         }
         public function getLastestOPPO(){
-            $query = "SELECT * FROM tbl_product WHERE brandId = '7' order by productId desc LIMIT 1";
+            $query = "SELECT * FROM tbl_product WHERE brandId = '17' order by productId desc LIMIT 1";
             $result = $this->db->select($query);
             return $result;
         }

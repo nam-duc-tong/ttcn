@@ -7,6 +7,7 @@
     $pd = new product();
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
         $insertProduct = $pd-> insert_product($_POST,$_FILES);
+        //lấy tất cá dữ liệu $_POST, $_FILES là chứa hình ảnh
     }
 ?>
 <div class="grid_10">
@@ -19,6 +20,7 @@
                 }
             ?>          
          <form action="productadd.php" method="post" enctype="multipart/form-data">
+             <!-- enctype: thêm hình ảnh -->
             <table class="form">
                 <tr>
                     <td>
@@ -35,7 +37,7 @@
                     <td>
                         
                         <select id="select" name="category">
-                            <option>----Chọn Danh Mục-----</option>
+                            <option>---Chọn Danh Mục---</option>
                             <?php
                                 $cat = new category();
                                 $catlist = $cat->show_category();
@@ -56,7 +58,7 @@
                     </td>
                     <td>
                         <select id="select" name="brand">
-                            <option>----Chọn Thương Hiệu----</option>
+                            <option>---Chọn Thương Hiệu---</option>
                             <?php
                                 $brand = new brand();
                                 $brandlist = $brand->show_brand();
