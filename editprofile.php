@@ -74,7 +74,7 @@
                 <!-- <tr>
                     <td>Zipcode</td>
                     <td>:</td>
-                    <td><input type="text" name="zipcode" value="<?php echo $result['zipcode']?>"></td>
+                    <td><input type="text" name="zipcode" value="<?php //echo $result['zipcode']?>"></td>
                 </tr> -->
                 <tr>
                     <td>Email</td>

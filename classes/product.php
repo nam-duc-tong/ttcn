@@ -96,7 +96,7 @@
             else{
                 if(!empty($file_name)){
                     //neu nguoi dung chon anh
-                    if($file_size>20480){//kiểm tra kích cơ file hịnh anh
+                    if($file_size>204800){//kiểm tra kích cơ file hịnh anh
                         $alert = "<span class='success'>Kích Thước Ảnh Phải Quá Lớn</span>";
                         return $alert;
                     }

@@ -17,7 +17,7 @@
 					 while($result = $product_feathered->fetch_assoc()){
 			  ?>
 				<div class="grid_1_of_4 images_1_of_4" style="width: 218px; height: 340px;display:inline-block;">
-					 <a href="details.php"><img src="admin/uploads/<?php echo $result['image']?>" alt="" style="width: 80%; height:60%;" /></a>
+					 <a href="details.php"><img src="admin/uploads/<?php echo $result['image']?>" alt="" style="width: 80%; height:50%;" /></a>
 					 <h2><?php echo $result['productName']?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'],50)?></p>
 					 <p><span class="price"><?php echo $result['price']." VND"?></span></p>
