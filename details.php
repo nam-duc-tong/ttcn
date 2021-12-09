@@ -46,7 +46,11 @@
 							}
 						?>		
 				</div>
-			</div>
+						<div class="add-cart">
+							<a href="" class="buysubmit">Lưu Vào Danh Sách Ưu Thích</a>
+							<a href="" class="buysubmit">So Sánh Sản Phẩm</a>
+						</div>
+			</div>	
 			<div class="product-desc">
 				<h2>Chi Tiết Sản Phẩm</h2>
 				<p><?php echo $fm->textShorten($result_details['product_desc'],150)?></p>	
