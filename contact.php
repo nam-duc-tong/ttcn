@@ -47,7 +47,7 @@
 						   		<p>Hà Nôi, Viêt Nam</p>
 						   		<!-- <p></p> -->
 				   		<p>Hotline: 0320145678</p>
-				 	 	<p>Email: <span>|Hoangha@gmail.com</span></p>
+				 	 	<p>Email: <span>Hoangha@gmail.com</span></p>
 				   		<p>Follow : <span>Facebook</span>, <span>Twitter</span></p>
 				   </div>
 				 </div>

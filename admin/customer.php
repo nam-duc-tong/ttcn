@@ -20,17 +20,13 @@
     }
     $cs = new customer();
     if($_SERVER['REQUEST_METHOD'] =='POST'){
-        // $catName = $_POST['catName'];
-        // $updatecat = $cat->update_category($catName,$id);
         echo "<script>window.location ='inbox.php'</script>";
     }
 ?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Thông Tin Khách Hàng</h2>
-        
         <div class="block copyblock">
-       
         <?php
           $cs = new customer();
             $get_customer = $cs->show_customers($id);

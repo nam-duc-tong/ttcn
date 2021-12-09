@@ -56,7 +56,7 @@
     		<div class="clear"></div>
             <div class="wrapper_method">
                 <h3 class="payment">Chọn Phương Thức Thanh Toán</h3>
-                 <a href="offinepayment.php">Thanh Toán Offine</a>
+                 <a href="offinepayment.php">Thanh Toán Offline</a>
                  <a href="onlinepayment.php">Thanh Toán Online</a>    
                 <div class="pre">
                     <a href="cart.php" style="background:grey;"><< Quay Lại</a>

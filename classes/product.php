@@ -179,6 +179,7 @@
         
         public function get_details($id){
             $query = "SELECT tbl_product.*,tbl_category.catName, tbl_brand.brandName
+            -- 
             from  tbl_product INNER JOIN tbl_category ON tbl_product.catId = tbl_category.catId
             INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId where tbl_product.productId = '$id'";
             // $query = "SELECT * from  tbl_product order by productId desc";

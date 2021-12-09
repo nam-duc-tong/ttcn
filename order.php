@@ -14,7 +14,7 @@
     <div class="content">
     	<div class="cartoption">
             <div class="order_page" style="background-color:#dbd0d0;">
-                <h2 style="color:red;font-weight: bold;font-size:40px;">Order Page</h2>
+                <h2 style="color:red;font-weight: bold;font-size:40px;">Chào Mừng bạn đến với website</h2>
             </div>
                     
        <div class="clear"></div>

@@ -3,16 +3,17 @@
 	// require_once 'inc/slider.php';	
 ?>
 <?php
-	if(isset($_GET['cartId'])){
-		$cartid = $_GET['cartId'];
+	if(isset($_GET['cartid'])){
+		$cartid = $_GET['cartid'];
 		$delcart = $ct->del_product_cart($cartid);
 	}
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
-		$cartid = $_POST['cartid'];
+		// request_method :Phương thức  yêu cầu được truy cập trang
+		$cartId = $_POST['cartId'];
         $quantity = $_POST['quantity'];
-		$update_quantity_cart = $ct->update_quantity_cart($quantity,$cartid);
+		$update_quantity_cart = $ct->update_quantity_cart($quantity,$cartId);
 		if($quantity<=0){
-			$delcart = $ct->del_product_cart($cartid);
+			$delcart = $ct->del_product_cart($cartId);
 		}
     }
 ?>
@@ -59,17 +60,22 @@
 								<td><?php echo $result['price']." VND"?></td>
 								<td>
 									<form action="" method="post">
-										<input type="hidden" name="cartid" value="<?php echo $result['cartId']?>"/>
+										<input type="hidden" name="cartId" value="<?php echo $result['cartId']?>"/>
 										<input type="number" name="quantity" min = "0" value="<?php echo $result['quantity']?>"/>
 										<input type="submit" name="submit" value="Update"/>
 									</form>
 								</td>
-								<td><?php $total = $result['price'] * $result['quantity']; echo $total." VND";?></td>
-								<td><a href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
+								<td>
+									<?php 
+									$total = $result['price'] * $result['quantity'];
+									echo $total." VND";
+									?>
+									</td>
+									<td><a onclick="return confirm('Bạn có muốn xóa không?');" href="?cartid=<?php echo $result['cartId'] ?>">Xóa</a></td>
 								
 							</tr>
 							<?php
-								$subtotal +=$total;
+								$subtotal +=$total;//tổng sản phẩm chưa tính thuế
 								$qty = $qty + $result['quantity'];
 								}
 							}
@@ -82,25 +88,25 @@
 						?>
 						<table style="float:right;text-align:left;" width="40%">
 							<tr>
-								<th>Sub Total : </th>
-								<td><?php
-									// $qty = $qty + $result['quantity'];
-									echo $subtotal;
+								<th>Tổng Giá : </th>
+							<td>
+								<?php
+									echo $subtotal.' VND';
 									Session::set('sum',$subtotal);
 									Session::set('qty',$qty);
 								?>
 							</td>
 							</tr>
 							<tr>
-								<th>VAT : </th>
+								<th>Thuế VAT : </th>
 								<td>15%</td>
 							</tr>
 							<tr>
-								<th>Grand Total :</th>
+								<th>Tổng Giá(sau thuế) :</th>
 								<td>
 									<?php $vat = $subtotal*0.15;
 										$glotal = $subtotal+$vat;
-										echo $glotal;
+										echo $glotal.' VND';
 									?>
 								</td>
 							</tr>

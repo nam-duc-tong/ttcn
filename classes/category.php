@@ -89,7 +89,10 @@
             return $result;
         }
         public function get_name_by_cat($id){
+
             $query = "SELECT tbl_product.*,tbl_category.catName,tbl_category.catId FROM  tbl_product,tbl_category WHERE tbl_product.catId = tbl_category.catId AND tbl_product.catId = '$id' LIMIT 1";
+            //chọn tất cả thành phần trong bảng product và chọn catName từ bảng category và chọn catID từ bảng category
+            //điều kiện cartId của bảng product phải bằng cartId của bảng category và cartid của bảng product phải bằng id mình truyền vào, limit 1 (chỉ được chọn 1)
             $result = $this->db->select($query);
             return $result;
         }

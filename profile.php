@@ -4,6 +4,7 @@
  <?php
 	 	$login_check = Session::get('customer_login');
 		 if($login_check==false){
+             //nếu đăng nhập sai sẽ quay về trang login
 			header('Location:login.php');
 		 } 
 		 else{

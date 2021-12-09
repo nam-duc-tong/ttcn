@@ -5,7 +5,7 @@
 <div class="main">
     <div class="content">
     	<div class="cartoption">			
-			    	<h2 style="color:red;font-weight: bold;font-size:40px;">Page doesn't found</h2>
+			    	<h2 style="color:red;font-weight: bold;font-size:40px;">Trang không tồn tại</h2>
                     
        <div class="clear"></div>
     </div>

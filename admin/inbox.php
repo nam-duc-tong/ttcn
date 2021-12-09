@@ -13,7 +13,7 @@ $ct = new cart();
     $time = $_GET['time'];
     $price = $_GET['price'];
     $shifted = $ct->shifted($Id,$time,$price);
- }
+ } 
 
  if(isset($_GET['delid'])){
     $Id = $_GET['delid'];
@@ -70,7 +70,7 @@ $ct = new cart();
                         <td><a href="customer.php?customerId=<?php echo $result['customer_Id']?>">Thông Tin Khách hàng</a></td>
                         <td><a href="productedit.php?productId=<?php echo $result['productId']?>">Sửa</a> || <a href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Xóa</a></td>
                         <td>
-                            <a href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Hủy</a>||<a href="">Nhận Đơn Hàng</a>  
+                            <a onclick="return confirm('Hủy Đơn Hàng');" href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Hủy</a>||<a onclick="return confirm('Xác Nhận Đơn Hàng');" href="?delid=<?php echo $result['Id']?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Nhận Đơn Hàng</a>  
                         </td>
                     </tr>
                     <?php                            

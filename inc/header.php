@@ -1,6 +1,7 @@
 <?php
     include_once 'lib/session.php';
     Session::init();
+	//khởi tao session
 ?>
 <?php
 	require_once 'lib/database.php';
@@ -10,7 +11,7 @@
 		include_once "classes/".$className.".php";
 	});
 	 $db = new Database();
-	 $fm = new format();
+	 $fm = new Format();
 	 $ct = new cart();
 	 $us = new user();
 	 $cs = new customer();
@@ -83,7 +84,7 @@
 				  <?php
 				 	if(isset($_GET['customer_Id'])){
 						 $delCart = $ct->del_all_data_cart();
-						 Session::destroy();
+						 Session::destroy();//xóa session
 					 } 
 				  ?>
 		   <div class="login">

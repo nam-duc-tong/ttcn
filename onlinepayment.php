@@ -17,30 +17,20 @@
 ?>
 <style type="text/css">
     .box-left{
-        width: 50%;
+        width: 100%;
         border:1px solid #666;
         float: left;
         padding: 4px;
     }
-    .box-right{
-        width: 45%;
-        border: 1px solid #666;
-        float:right;
-        padding: 4px;
-    }
-   a.a_order{
-       background:red;
-       padding:7px 20px;
-       color:#fff;
-       font-size: 21px;
-   }
+  
+
 </style>
 <form action="" method="POST">
 <div class="main">
     <div class="content">
     	<div class="section group">
             <div class="heading">
-                    <h3>Thanh Toán Offline</h3>
+                    <h3>Thanh Toán Online</h3>
             </div>
             <div class="clear"></div>
             <div class="box-left">
@@ -59,9 +49,11 @@
 							<tr>
                                 <th width="5%">STT</th>
 								<th width="15%">Tên Sản Phẩm</th>
-								<th width="15%">Giá</th>
-								<th width="25%">Số Lượng</th>
-								<th width="20%">Tổng Giá</th>
+								<th width="10%">Giá</th>
+								<th width="15%">Số Lượng</th>
+								<th width="15%">Tổng Giá</th>
+                                <th width="20%">Trạng Thái Đơn Hàng</th>
+								<th width="20%">Hủy Đơn Hàng</th>
 							</tr>
 							<?php
 								$get_product_cart = $ct ->get_product_cart();
@@ -126,50 +118,12 @@
 						?>
 					</div>	
             </div>
-            <div class="box-right">
-            <table class="tblone">
-                <?php
-                $id = Session::get('customer_Id');
-                    $get_customers = $cs->show_customers($id);
-                    if($get_customers){
-                        while($result = $get_customers->fetch_assoc()){
-                ?>
-                <tr>
-                    <td>Tên Khách Hàng</td>
-                    <td>:</td>
-                    <td><?php echo $result['name'] ?></td>
-                </tr>  
-                <tr>
-                    <td>Số Điện Thoại</td>
-                    <td>:</td>
-                    <td><?php echo $result['phone'] ?></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>:</td>
-                    <td><?php echo $result['email'] ?></td>
-                </tr>
-
-                <tr>
-                    <td>Địa Chỉ</td>
-                    <td>:</td>
-                    <td><?php echo $result['address'] ?></td>
-                </tr>
-                <tr>
-                    <td colspan="3"><a href="editprofile.php">Cập nhật thông tin</a></td>
-                </tr>
-                <?php                       
-                        }
-                  }
-                ?>
-            </table>
-            </div>
- 
+          
         </div>
        
  	</div>
 
-     <center><a href="?orderId=order" class="a_order">Đặt Hàng Ngay</a></center><br />
+     <center><a href="?orderId=order" class="a_order">Order Now</a></center><br />
 </div>
 </form>
 <?php

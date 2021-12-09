@@ -56,7 +56,7 @@
 								<th width="10%">Số Lượng</th>
 								<th width="15%">Ngày Đặt</th>
 								<th width="15%">Trạng Thái</th>
-								<th width="5%"></th>
+								
 							</tr>
 							<?php
 							 $customer_Id = Session::get('customer_Id');
@@ -78,28 +78,9 @@
 									if($result['status']==0){
 										echo 'Đang xử lý';
 									}
-									elseif($result['status']==1){
 									?>
-										 <a href="?confirmid=<?php echo $customer_Id?>&price=<?php echo $result['price']?>&time=<?php echo $result['date_order']?>">Đang vận chuyển</a>
-									<?php
-									}else{
-										echo 'da nhan hang';
-									}
-									?>
-								
 								</td>
-								<?php
-									if($result['status'] == '0'){
-								?>
-								<td><?php echo 'N/A';?></td>
-								<?php
-								}
-								else{
-								?>
-								<td><a href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
-								<?php
-							}
-								?>
+								
 							</tr>
 							<?php
 							

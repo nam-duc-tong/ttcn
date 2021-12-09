@@ -54,28 +54,11 @@
                     <td>:</td>
                     <td><input type="text" name="name" value="<?php echo $result['name']?>"></td>
                 </tr>
-                <!-- <tr>
-                    <td>City</td>
-                    <td>:</td>
-                    <td><input type="text" name="city" value="<?php echo $result['city']?>"></td>
-                </tr> -->
                 <tr>
                     <td>Số Điện Thoại</td>
                     <td>:</td>
                     <td><input type="text" name="phone" value="<?php echo $result['phone']?>"></td>
                 </tr>
-                <!-- <tr>
-                    <td>Country</td>
-                    <td>:</td>
-                    <td><input type="text" name="country" value="<?php 
-                    // echo $result['country']
-                    ?>"></td>
-                </tr> -->
-                <!-- <tr>
-                    <td>Zipcode</td>
-                    <td>:</td>
-                    <td><input type="text" name="zipcode" value="<?php //echo $result['zipcode']?>"></td>
-                </tr> -->
                 <tr>
                     <td>Email</td>
                     <td>:</td>

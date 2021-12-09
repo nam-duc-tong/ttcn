@@ -9,36 +9,35 @@
         private $db;
         public function __construct(){
             $this->db = new Database();
-            $this->fm = new format();
+            $this->fm = new Format();
         }                                                                                                   
         public function add_to_cart($quantity,$id){
-            $quantity = $this->fm->validation($quantity);
+            $quantity = $this->fm->validation($quantity);//kiểm tra xem quantity có giá trị đúng hay không
             $quantity = mysqli_real_escape_string($this->db->link,$quantity );
             $id = mysqli_real_escape_string($this->db->link,$id);
             $sId = session_id();
-
-            // $check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId = '$sId'";
-            // if($check_cart){
-            //     $msg = "Product Already Added";
-            //     return $msg;
-            // }
-            // else{
-            $query = "SELECT * FROM tbl_product WHERE productId = '$id'";
-            $result = $this->db->select($query)->fetch_assoc();
+            $query = "SELECT * FROM tbl_product WHERE productId = '$id'";//câu lệnh
+            $result = $this->db->select($query)->fetch_assoc();//truy vấn , trả về mảng được lập chỉ mục chuỗi
             $image = $result["image"];
             $price= $result["price"];
             $productName = $result["productName"];
+            $check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId = '$sId'";
+            $result_check_cart = $this->db->select($check_cart);
+            if($result_check_cart){
+                $msg = "Sản Phẩm đã được thêm vào";
+                return $msg;
+            }
+            else{
                 $query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
                 $insert_cart = $this->db->insert($query_insert);
     
-                if($result){
-                    header('Location: cart.php');
+                if($insert_cart){
+                    header('Location: cart.php');//chuyển trang
                 }   
                 else{
                     header('Location: 404.php');
                 }
-            // }
-            
+            }
         }
         public function get_product_cart(){
             $sId = session_id();
@@ -46,14 +45,14 @@
             $result = $this->db->select($query);
             return $result;
         }
-        public function update_quantity_cart($quantity,$cartid){
+        public function update_quantity_cart($quantity,$cartId){
             $quantity = mysqli_real_escape_string($this->db->link,$quantity);
-            $cartid = mysqli_real_escape_string($this->db->link,$cartid);
+            $cartId = mysqli_real_escape_string($this->db->link,$cartId);
             //neu nguoi dung khong chon anh
             $query = "UPDATE tbl_cart SET
             quantity = '$quantity'
 
-            WHERE cartId = '$cartid'";
+            WHERE cartId = '$cartId'";
             $result = $this->db->update($query);
             if($result){
                 $msg = "<span class ='success'>Cập Nhật Giỏ Hàng Thành Công</span>";
@@ -115,19 +114,18 @@
             }
         }
         public function getAmountPrice($customer_Id){
-            // $sId = session_id();
             $query = "SELECT price FROM tbl_order WHERE customer_Id ='$customer_Id'";
             $get_price = $this->db->select($query);
             return $get_price;
         }
         public function get_cart_ordered($customer_Id){
-         
             $query = "SELECT * FROM tbl_order WHERE customer_Id ='$customer_Id'";
             $get_cart_ordered = $this->db->select($query);
             return $get_cart_ordered;
         }
         public function get_inbox_cart(){
             $query = "SELECT * FROM tbl_order ORDER BY date_order";
+            //Lệnh ORDER BY sắp xếp kết quả theo thứ tự tăng dần theo mặc định
             $get_inbox_cart = $this->db->select($query);
             return $get_inbox_cart;
         }
@@ -135,7 +133,6 @@
             $Id = mysqli_real_escape_string($this->db->link,$Id);
             $price = mysqli_real_escape_string($this->db->link,$price);
             $time = mysqli_real_escape_string($this->db->link,$time);
-
             $query = "UPDATE tbl_order SET status = '1' WHERE Id = '$Id' AND date_order='$time' AND price = '$price'";
             $result = $this->db->update($query);
             if($result){
@@ -151,7 +148,6 @@
             $Id = mysqli_real_escape_string($this->db->link,$Id);
             $price = mysqli_real_escape_string($this->db->link,$price);
             $time = mysqli_real_escape_string($this->db->link,$time);
-
             $query = "DELETE FROM tbl_order
              WHERE Id = '$Id' AND date_order='$time' AND price = '$price'";
             $result = $this->db->update($query);
