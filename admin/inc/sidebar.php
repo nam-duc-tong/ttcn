@@ -22,6 +22,13 @@
                     </ul>
                 </li>
 
+                <li><a class="menuitem">Slider</a>
+                    <ul class="submenu">
+                        <li><a href="slideradd.php">Thêm slider</a> </li>
+                        <li><a href="sliderlist.php">Liệt kê slider</a> </li>
+                    </ul>
+                </li>
+
                <li><a class="menuitem">Site Option</a>
                     <ul class="submenu">
                         <li><a href="titleslogan.php">Title & Slogan</a></li>

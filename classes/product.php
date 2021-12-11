@@ -36,7 +36,7 @@
             else{
                 //lấy hình ảnh cho vào file upload
                 move_uploaded_file($file_temp,$uploaded_image); 
-                  $query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
+                $query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
                 $result = $this->db->insert($query);    
                 if($result){
                     $alert = "<span class= 'success'>Thêm Sản Phẩm Thành Công</span>";
@@ -46,8 +46,62 @@
                     $alert = "<span class= 'error'>Thêm Sản Phẩm Thất Bại</span>";
                     return $alert;
                 }
+            }  
+        }
+        public function insert_slider($data, $files)
+        {
+            $sliderName = mysqli_real_escape_string($this->db->link,$data['sliderName']);
+            $type = mysqli_real_escape_string($this->db->link,$data['type']);
+                        //kiem tra hinh anh va lay hinh anh cho vao folder uploads
+            //chỉ cho phép file có đuôi chấm....
+            $permited = array('jpg','jpeg','png','gif');
+            $file_name = $_FILES['image']['name'];//tên ảnh
+            $file_size = $_FILES['image']['size'];//kích thước hình ảnh
+            $file_temp = $_FILES['image']['tmp_name']; //file tạm để lưu hình ảnh
+
+            $div = explode('.',$file_name);
+            $file_ext = strtolower(end($div));
+            //chuyển tất cả chữ hoa thành chữ thường
+
+            $unique_image = substr(md5(time()),0,10).'.'.$file_ext;
+            $uploaded_image = "uploads/".$unique_image;
+            //nếu trống
+            if($sliderName==""||$type==""){
+                $alert = "<span class='error'>Các Trường Không Được Để Trống</span>";
+                return $alert;
             }
-          
+            else{
+                if(!empty($file_name)){
+                    //neu nguoi dung chon anh
+                    if($file_size>2048000){//kiểm tra kích cơ file hịnh anh
+                        $alert = "<span class='success'>Kích Thước Ảnh Phải Quá Lớn</span>";
+                        return $alert;
+                    }
+                    elseif (in_array($file_ext,$permited)===false){
+                        $alert = "<span class='error'>Bạn Chỉ Có Thể Tải Lên:-".implode(',',$permited)."</span>";
+                        return $alert;
+                    }
+                    move_uploaded_file($file_temp,$uploaded_image);
+                    $query = "INSERT INTO tbl_slider(sliderName,type,slider_image) VALUES('$sliderName','$type','$unique_image')";
+                    $result = $this->db->insert($query);    
+                        if($result){
+                            $alert = "<span class= 'success'>Thêm slider Thành Công</span>";
+                            return $alert;
+                        }   
+                        else{
+                            $alert = "<span class= 'error'>Thêm slider Thất Bại</span>";
+                            return $alert;
+                        }
+                    }
+            // $query = "UPDATE tbl_brand SET brandName ='$brandName' WHERE brandId = '$id'";
+          } 
+        }
+
+        public function show_slider()
+        {
+            $query = "SELECT * FROM tbl_slider where type ='1' order by  sliderId desc";
+            $result = $this->db->select($query);
+            return $result;
         }
         public function show_product(){
 
