@@ -79,7 +79,7 @@
 								<td>
                                         <?php echo $result['quantity']?>
 								</td>
-								<td><?php $total = $result['price'] * $result['quantity']; echo $total.' VND';?></td>	
+								<td><?php $total = $result['price'] * $result['quantity']; echo $fm->format_currency($total).' VND';?></td>	
                             </tr>
 							<?php
 								$subtotal +=$total;
@@ -98,7 +98,7 @@
 								<th>Tổng Giá : </th>
 								<td>
                                 <?php
-									echo $subtotal.' VND';
+									echo $fm->format_currency($subtotal).' VND';
 									Session::set('sum',$subtotal);
 									Session::set('qty',$qty);
 								?>
@@ -113,7 +113,7 @@
 								<td>
 									<?php $vat = $subtotal*0.15;
 										$glotal = $subtotal+$vat;
-										echo $glotal.' VND';
+										echo $fm->format_currency($glotal).' VND';
 									?>
 								</td>
 							</tr>

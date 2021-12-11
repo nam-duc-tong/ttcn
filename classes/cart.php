@@ -12,32 +12,32 @@
             $this->fm = new Format();
         }                                                                                                   
         public function add_to_cart($quantity,$id){
-            $quantity = $this->fm->validation($quantity);//kiểm tra xem quantity có giá trị đúng hay không
-            $quantity = mysqli_real_escape_string($this->db->link,$quantity );
-            $id = mysqli_real_escape_string($this->db->link,$id);
-            $sId = session_id();
-            $query = "SELECT * FROM tbl_product WHERE productId = '$id'";//câu lệnh
-            $result = $this->db->select($query)->fetch_assoc();//truy vấn , trả về mảng được lập chỉ mục chuỗi
-            $image = $result["image"];
-            $price= $result["price"];
-            $productName = $result["productName"];
-            $check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId = '$sId'";
-            $result_check_cart = $this->db->select($check_cart);
-            if($result_check_cart){
-                $msg = "Sản Phẩm đã được thêm vào";
-                return $msg;
-            }
-            else{
-                $query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
-                $insert_cart = $this->db->insert($query_insert);
-    
-                if($insert_cart){
-                    header('Location: cart.php');//chuyển trang
-                }   
-                else{
-                    header('Location: 404.php');
-                }
-            }
+            $quantity = $this->fm->validation($quantity);
+			$quantity = mysqli_real_escape_string($this->db->link, $quantity);
+			$id = mysqli_real_escape_string($this->db->link, $id);
+			$sId = session_id();
+			$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
+			$result_check_cart = $this->db->select($check_cart);
+			if($result_check_cart){
+				$msg = "<span class='error'>Sản phẩm đã được thêm vào</span>";
+				return $msg;
+			}else{
+
+				$query = "SELECT * FROM tbl_product WHERE productId = '$id'";
+				$result = $this->db->select($query)->fetch_assoc();
+				
+				$image = $result["image"];
+				$price = $result["price"];
+				$productName = $result["productName"];
+
+				$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+				$insert_cart = $this->db->insert($query_insert);
+				if($insert_cart){
+					$msg = "<span class='error'>Thêm sản phẩm thành công</span>";
+					return $msg;
+					
+				}
+			}
         }
         public function get_product_cart(){
             $sId = session_id();
@@ -75,6 +75,7 @@
                 return $msg;
             }
         }
+      
         public function check_cart(){
             $sId = session_id();
             $query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
@@ -94,6 +95,12 @@
             $result = $this->db->select($query);
             return $result;
         }
+        // public function del_compare($customer_id){
+        //     $sId = session_id();
+        //     $query = "DELETE FROM tbl_compare WHERE customer_id = '$customer_id'";   
+        //     $result = $this->db->delete($query);
+        //     return $result;
+        // }
         public function insertOrder($customer_Id){
             $sId = session_id();
             $query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";

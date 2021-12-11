@@ -20,6 +20,7 @@
 
 ?>
 <?php
+//kiểm soát bộ nhớ đệm trong trình duyệt và bộ đệm được chia sẻ
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
@@ -70,7 +71,7 @@
 									if($check_cart){
 										$sum = Session::get("sum");
 										$qty = Session::get("qty");
-										echo $sum.'VND'.' - '.'SL: '.$qty;
+										echo $fm->format_currency($sum).'VND'.' - '.'SL: '.$qty;
 									}
 									else{
 										echo 'Empty';
@@ -83,7 +84,9 @@
 
 				  <?php
 				 	if(isset($_GET['customer_Id'])){
+						 $customer_id = $_GET['customer_id'];
 						 $delCart = $ct->del_all_data_cart();
+						 $delCompare = $ct->del_compare($customer_id);
 						 Session::destroy();//xóa session
 					 } 
 				  ?>
@@ -102,7 +105,9 @@
 	 </div>
 	 <div class="clear"></div>
  </div>
+
 <div class="menu">
+
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  <li><a href="index.php">Trang Chủ</a></li>
 	  <li><a href="topbrands.php">Sản Phẩm</a></li>
@@ -123,6 +128,13 @@
 		 } 
 		 else{
 			 echo '<li><a href="profile.php">Thông Tin Khách Hàng</a></li>';
+		 }
+	  ?>
+	 
+	  <?php
+	 	$login_check = Session::get('customer_login');
+		 if($login_check){
+			echo '<li><a href="wishlist.php">Danh Sách Yêu Thích</a> </li>';
 		 }
 	  ?>
 	  <li><a href="contact.php">Liên Hệ</a> </li>

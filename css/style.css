@@ -1461,7 +1461,7 @@ table.tblone img {
 
 .shopright img {
   width: 270px;
-  outline:none
+  outline:none;
 }
 
 .contact-form{
@@ -2485,4 +2485,9 @@ p.terms {
 		width:92%;
 		padding:4%;
 	}
+}
+
+.button-details input[type=submit]{
+	float: left;
+	margin: 5px;
 }

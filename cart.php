@@ -41,8 +41,8 @@
 							<tr>
 								<th width="20%">Tên Sản Phẩm</th>
 								<th width="15%">Hình Ảnh</th>
-								<th width="15%">Giá</th>
-								<th width="20%">Số Lượng</th>
+								<th width="10%">Giá</th>
+								<th width="15%">Số Lượng</th>
 								<th width="20%">Tổng Tiền</th>
 								<th width="20%">Trạng Thái</th>
 							</tr>
@@ -57,7 +57,7 @@
 							<tr>
 								<td><?php echo $result['productName']?></td>
 								<td><img src="admin/uploads/<?php echo $result['image']?>" alt="" style="width:40px; height: 40px;"/></td>
-								<td><?php echo $result['price']." VND"?></td>
+								<td><?php echo $fm->format_currency($result['price'])." VND"?></td>
 								<td>
 									<form action="" method="post">
 										<input type="hidden" name="cartId" value="<?php echo $result['cartId']?>"/>
@@ -68,7 +68,7 @@
 								<td>
 									<?php 
 									$total = $result['price'] * $result['quantity'];
-									echo $total." VND";
+									echo $fm->format_currency($total)." VND";
 									?>
 									</td>
 									<td><a onclick="return confirm('Bạn có muốn xóa không?');" href="?cartid=<?php echo $result['cartId'] ?>">Xóa</a></td>
@@ -91,7 +91,7 @@
 								<th>Tổng Giá : </th>
 							<td>
 								<?php
-									echo $subtotal.' VND';
+									echo $fm->format_currency($subtotal)." VND";
 									Session::set('sum',$subtotal);
 									Session::set('qty',$qty);
 								?>
@@ -106,7 +106,7 @@
 								<td>
 									<?php $vat = $subtotal*0.15;
 										$glotal = $subtotal+$vat;
-										echo $glotal.' VND';
+										echo $fm->format_currency($glotal)." VND";
 									?>
 								</td>
 							</tr>
@@ -117,15 +117,15 @@
 									echo 'Giỏ Hàng Của Bạn Hiện Tại Đang Trống';
 								}  
 						?>
-					</div>
-					<div class="shopping">
-						<div class="shopleft">
-							<a href="index.php"> <img src="images/shop.png" alt="" /></a>
-						</div>
-						<div class="shopright">
-							<a href="payment.php"> <img src="images/check.png" alt="" /></a>
-						</div>
-					</div>
+			</div>
+			<div class="shopping">
+				<div class="shopleft">
+					<a href="index.php"><img src="images/shop.png" alt="" /></a>
+				</div>
+				<div class="shopright">
+					<a href="payment.php"><img src="images/check.png" alt="" /></a>
+				</div>
+			</div>
     	</div>  	
        <div class="clear"></div>
     </div>

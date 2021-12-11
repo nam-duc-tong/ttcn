@@ -20,7 +20,7 @@
 					 <a href="details.php"><img src="admin/uploads/<?php echo $result['image']?>" alt="" style="width: 80%; height:50%;" /></a>
 					 <h2><?php echo $result['productName']?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'],50)?></p>
-					 <p><span class="price"><?php echo $result['price']." VND"?></span></p>
+					 <p><span class="price"><?php echo $fm->format_currency($result['price'])." VND"?></span></p>
 				     <div class="button"><span><a href="details.php?proId=<?php echo $result['productId']?>" class="details">Chi Tiết</a></span></div>
 				</div>
 			<?php	 
@@ -44,7 +44,7 @@
 					 <a href="details.php"><img src="admin/uploads/<?php echo $result_new['image']?>" alt="" style="width: 80%; height:60%;"  /></a>
 					 <h2><?php echo $result_new['productName']?></h2>
 					 <p><?php echo $fm->textShorten($result_new['product_desc'],50)?></p>
-					 <p><span class="price"><?php echo $result_new['price']." VND"?></span></p>
+					 <p><span class="price"><?php echo $fm->format_currency($result_new['price'])." VND"?></span></p>
 				     <div class="button"><span><a href="details.php?proId=<?php echo $result_new['productId']?>" class="details">Chi Tiết</a></span></div>
 				</div>
 				<?php	 
