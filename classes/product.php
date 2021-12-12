@@ -12,7 +12,13 @@
         public function __construct(){
             $this->db = new Database();
             $this->fm = new format();
-        }                                                                                                   
+        }                                            
+        public function search_product($tukhoa){
+            $tukhoa = $this->fm->validation($tukhoa);
+            $query = "SELECT * FROM tbl_product WHERE productName LIKE '%$tukhoa%'"; //tim tu giong tu khoa trong productName
+            $result = $this->db->select($query);
+            return $result;
+        }                                                       
         public function insert_product($data,$files){
             $productName = mysqli_real_escape_string($this->db->link,$data['productName']);
             $brand = mysqli_real_escape_string($this->db->link,$data['brand']);
@@ -100,6 +106,13 @@
         public function show_slider()
         {
             $query = "SELECT * FROM tbl_slider where type ='1' order by  sliderId desc";
+            $result = $this->db->select($query);
+            return $result;
+        }
+        
+        public function show_slider_list()
+        {
+            $query = "SELECT * FROM tbl_slider order by  sliderId desc";
             $result = $this->db->select($query);
             return $result;
         }
@@ -202,10 +215,14 @@
                              return $alert;
                          }
                     }
-            
             // $query = "UPDATE tbl_brand SET brandName ='$brandName' WHERE brandId = '$id'";
-          
           }
+        }
+        public function update_type_slider($id,$type){
+            $type = mysqli_real_escape_string($this->db->link,$type);
+            $query = "UPDATE tbl_slider SET type = '$type' WHERE sliderId = '$id'";
+            $result = $this->db->update($query);
+            return $result;
         }
         public function del_product($id){
             $query = "DELETE FROM tbl_product WHERE productId = '$id'";
@@ -219,6 +236,20 @@
                 return $alert;
             }
         }
+
+        public function del_slider($id){
+            $query = "DELETE FROM tbl_slider WHERE sliderId = '$id'";
+            $result = $this->db->delete($query);
+            if($result){
+                $alert = "<span class='success'>Xóa Slider Thành Công</span>";
+                return $alert;
+            }
+            else{
+                $alert = "<span class = 'error'>Xóa Slider Thất Bại</span>";
+                return $alert;
+            }
+        }
+        
         public function del_wishlist($proid,$customer_id)
         {
             $query = "DELETE FROM tbl_wishlist WHERE productId = '$proid' and customer_id = '$customer_id'";
@@ -233,7 +264,21 @@
         }
         
         public function getproduct_new(){
-            $query = "SELECT * FROM tbl_product order by productId  desc LIMIT 4";
+            $sp_tungtrang = 4;
+            if(!isset($_GET['trang']))
+            {
+                $trang = 1;
+            }
+            else{
+                $trang = $_GET['trang'];
+            }
+            $tung_trang = ($trang -1)*$sp_tungtrang;
+            $query = "SELECT * FROM tbl_product order by productId  desc LIMIT $tung_trang,$sp_tungtrang";
+            $result = $this->db->select($query);
+            return $result;
+        }
+        public function get_all_product(){
+            $query = "SELECT * FROM tbl_product";
             $result = $this->db->select($query);
             return $result;
         }

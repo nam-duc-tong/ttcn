@@ -7,7 +7,7 @@
 					if($getLastApple){
 						while($resultApple = $getLastApple->fetch_assoc()){
 				?>
-				<div class="listview_1_of_2 images_1_of_2"style="height: 120px; padding-top: 10x;">
+				<div class="listview_1_of_2 images_1_of_2"style="height: 140px; padding-top: 10x;">
 					<div class="listimg listimg_2_of_1">
 						 <a href="details.php"> <img src="admin/uploads/<?php echo $resultApple['image']?>" alt="" style="height:100px;"/></a>
 					</div>
@@ -26,7 +26,7 @@
 					if($getLastOPPO){
 						while($resultOppo = $getLastOPPO->fetch_assoc()){
 				?>		
-				<div class="listview_1_of_2 images_1_of_2"style="height: 120px;padding-top: 10px;">
+				<div class="listview_1_of_2 images_1_of_2"style="height: 140px;padding-top: 10px;">
 					<div class="listimg listimg_2_of_1">
 						 <a href="details.php"> <img src="admin/uploads/<?php echo $resultOppo['image']?>" alt="" style="height:100px;"/></a>
 					</div>
@@ -47,7 +47,7 @@
 					if($getLastIphone){
 						while($resultIP = $getLastIphone->fetch_assoc()){
 				?>		
-				<div class="listview_1_of_2 images_1_of_2"style="height: 120px; padding-top: 10px;">
+				<div class="listview_1_of_2 images_1_of_2"style="height: 140px; padding-top: 10px;">
 					<div class="listimg listimg_2_of_1">
 						 <a href="details.php"><img src="admin/uploads/<?php echo $resultIP['image']?>" alt=""  style="height:100px;"/></a>
 					</div>
@@ -66,7 +66,7 @@
 					if($getLastSS){
 						while($resultSS = $getLastSS->fetch_assoc()){
 				?>		
-				<div class="listview_1_of_2 images_1_of_2"style="height: 120px; padding-top: 10px;">
+				<div class="listview_1_of_2 images_1_of_2"style="height: 140px; padding-top: 10px;">
 					<div class="listimg listimg_2_of_1">
 						  <a href="details.php"><img src="admin/uploads/<?php echo $resultSS['image']?>" alt=""  style="height:100px;"/></a>
 					</div>

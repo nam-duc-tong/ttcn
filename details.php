@@ -10,10 +10,6 @@
         $id = $_GET['proId'];
     }
 	$customer_id = Session::get('customer_id');
-	// if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['compare'])){
-    //     $productId = $_POST['productId'];
-	// 	$insertCompare = $product->insertCompare($productId,$customer_id);
-    // }
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
         $quantity = $_POST['quantity'];
 		$insertCart = $ct->add_to_cart($quantity,$id);
@@ -23,6 +19,10 @@
         $productId = $_POST['productId'];
 		$insertWishlist = $product->insertWishlist($productId,$customer_id);
     }
+	if(isset($_POST['binhluan_submit']))
+	{
+		$binhluan_insert = $cs->insert_binhluan();
+	}
 ?>
  <div class="main">
     <div class="content">
@@ -61,12 +61,6 @@
 							<input type="hidden" name="productId" value="<?php echo $result_details['productId'] ?>"/>					
 							<?php
 								$login_check = Session::get('customer_login');
-								// if($login_check){
-								// 	echo '<input type="submit" class="buysubmit" name="compare" value="So sánh sản phẩm" style="margin-right:10px;">';
-								// }
-								// else{
-								// 	echo '';
-								// }
 							?>
 						</form>
 						<form action="" method="POST"  >
@@ -84,12 +78,6 @@
 					</div>
 							<div class="clear"></div>
 					<p>
-						<?php
-							// if(isset($insertCompare))
-							// 	{
-							// 		echo $insertCompare;
-							// 	}
-							// ?>
 							<?php
 							if(isset($insertWishlist))
 								{
@@ -122,11 +110,34 @@
 							}
 						?>
 						</ul>
-				
  				</div>
  		</div>
+		 <div class="binhluan">
+			 <div class="row">
+				 <div class="col-md-8">
+					 <h5>Ý kiến sản phẩm</h5>
+					 <?php
+					 	if(isset($binhluan_insert))
+						 {
+							 echo $binhluan_insert;
+						 }
+					 ?>
+					 <form action="" method="POST">
+						 <p><input type="hidden" value="<?php echo $id?>" name="product_id_binhluan"></p>
+						 <p>
+							  <input type="text"placeholder="Dien Ten" class="form-control" name="tennguoibinhluan">
+						 </p>
+						 <p>
+							 <textarea rows="5" style="resize:none;" placeholder="Binh Luan . . ." class="form-control" name="binhluan"></textarea>
+						 </p>
+						 <p>
+							 <input type="submit" name="binhluan_submit" class="btn btn-success" value="Gui binh luan">
+						 </p>
+					 </form>
+				 </div>
+			 </div>
+		 </div>
  	</div>
-
 <?php
 	require_once 'inc/footer.php';
 ?>

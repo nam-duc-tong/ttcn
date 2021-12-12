@@ -11,6 +11,28 @@
             $this->db = new Database();
             $this->fm = new format();
         }      
+        public function insert_binhluan(){ 
+            $product_id = $_POST['product_id_binhluan'];
+            $tenbinhluan = $_POST['tennguoibinhluan'];
+            $binhluan = $_POST['binhluan'];
+            if($tenbinhluan == ''|| $binhluan=='')
+            {
+                $alert = "<span class='error'> Khong duoc de chong</span>";
+                return $alert;
+            }
+            else{
+                $query = "INSERT INTO tbl_binhluan(tenbinhluan,binhluan,product_id) VALUES ('$tenbinhluan', '$binhluan', '$product_id')";
+                $result = $this->db->insert($query);
+                if($result){
+                    $alert = "<span class='success'>Bình Luận sẽ được admin kiểm duyệt</span>";
+                    return $alert;
+                }
+                else{
+                    $alert = "<span class='error'>Bình Luận không thành công</span>";
+                    return $alert;
+                }
+            }
+        }
         public function insert_customers($data){
             $name = mysqli_real_escape_string($this->db->link,$data['name']);
             // $city = mysqli_real_escape_string($this->db->link,$data['city']);
@@ -34,7 +56,7 @@
                 }
                 else{
 
-                $query = "INSERT INTO tbl_customer(name,email,address,phone,password) VALUES ('$name', '$email', '$address', '$phone','$password')";
+                $query = "INSERT INTO tbl_customer(name,email,address,phone,password) VALUES ('$ten', '$email', '$address', '$phone','$password')";
                 $result = $this->db->insert($query);
                 if($result){
                     $alert = "<span class='success'> Tạo Tài Khoản Thành Công</span>";
@@ -76,6 +98,22 @@
         $query = "SELECT * FROM tbl_customer WHERE id = '$id'";
         $result = $this->db->select($query);
         return $result;
+    }
+    public function show_comment(){
+        $query = "SELECT * FROM tbl_binhluan order by binhluan_id desc";
+        $result = $this->db->select($query);
+        return $result;
+    }
+    public function del_comment($id){
+        $query = "DELETE FROM tbl_binhluan where binhluan_id = '$id'";
+        $result = $this->db->delete($query);
+        if($result){
+            $alert = "<span class='success'>Xóa bình luận thành công</span>";
+            return $alert;
+        }else{
+            $alert = "<span class='error'>Xóa bình luận không thành công</span>";
+            return $alert;
+        }
     }
     public function update_customers($data,$id){
             $name = mysqli_real_escape_string($this->db->link,$data['name']);

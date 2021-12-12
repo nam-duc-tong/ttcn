@@ -9,13 +9,10 @@
 		$update_type_slider = $product->update_type_slider($id,$type);
 
 	}
-	if(isset($_GET['slider_del'])){
+	if(isset($_GET['slider_del'])){//neu ton tai
 		$id = $_GET['slider_del'];
-		
 		$del_slider = $product->del_slider($id);
-
 	}
-
 ?>
 <div class="grid_10">
     <div class="box round first grid">
@@ -53,26 +50,24 @@
 						<?php
 						if($result_slider['type']==1){
 						?>
-						<a href="?type_slider=<?php echo $result_slider['sliderId'] ?>&type=0">Off</a> 
+						<a href="?type_slider=<?php echo $result_slider['sliderId'] ?>&type=0">On</a> 
 						<?php
 						 }else{
 						?>	
-						<a href="?type_slider=<?php echo $result_slider['sliderId'] ?>&type=1">On</a> 
+						<a href="?type_slider=<?php echo $result_slider['sliderId'] ?>&type=1">Off</a> 
 						<?php
 						}
 						?>
-
 					</td>		
 				<td>
-					
-					<a href="?slider_del=<?php echo $result_slider['sliderId'] ?>" onclick="return confirm('Are you sure to Delete!');" >Delete</a> 
+					<a href="?slider_del=<?php echo $result_slider['sliderId'] ?>" onclick="return confirm('Bạn có chắc chắn xóa không? ');" >Delete</a> 
 				</td>
 				</tr>
 				<?php
-							}
-						}
+					}
+				}
 
-						 ?>	
+			?>	
 			</tbody>
 		</table>
 

@@ -16,7 +16,7 @@
 				 if($product_feathered){
 					 while($result = $product_feathered->fetch_assoc()){
 			  ?>
-				<div class="grid_1_of_4 images_1_of_4" style="width: 242.5px; height: 341px;display:inline-block;">
+				<div class="grid_1_of_4 images_1_of_4" style="width: 270px; height: 375px;">
 					 <a href="details.php"><img src="admin/uploads/<?php echo $result['image']?>" alt="" style="width: 80%; height:50%;" /></a>
 					 <h2><?php echo $result['productName']?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'],50)?></p>
@@ -40,7 +40,7 @@
 				 if($product_new){
 					 while($result_new = $product_new->fetch_assoc()){
 			  ?>
-				<div class="grid_1_of_4 images_1_of_4"  style="width: 242.5px; height: 341px;display:inline-block;">
+				<div class="grid_1_of_4 images_1_of_4"  style="width: 270px; height: 375px;">
 					 <a href="details.php"><img src="admin/uploads/<?php echo $result_new['image']?>" alt="" style="width: 80%; height:60%;"  /></a>
 					 <h2><?php echo $result_new['productName']?></h2>
 					 <p><?php echo $fm->textShorten($result_new['product_desc'],50)?></p>
@@ -50,6 +50,19 @@
 				<?php	 
 						}
 					} 
+					?>
+			</div>
+			<div class="">
+				<?php
+					$product_all = $product->get_all_product();
+					$product_count = mysqli_num_rows($product_all);
+					$product_button = ceil($product_count/4);
+					$i = 1;
+					echo '<p>Trang: </p>';
+					for($i = 1; $i <=$product_button ; $i++)
+					{
+						echo '<a style = "margin: 0 5px;" href="index.php?trang='.$i.'">'.$i.'</a>';
+					}
 				?>
 			</div>
     </div>
