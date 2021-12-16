@@ -3,43 +3,42 @@
    	  <div class="wrapper">	
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
+						<h4><i class="fas fa-info-circle" style="padding-right: 5px;"></i>Thông Tin</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
-						<li><a href="#"><span>Advanced Search</span></a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="#"><span>Contact Us</span></a></li>
+							<li><a href="#">Hoàng Hà Mobile</a></li>
+							<li><a href="#">Dịch Vụ Khách Hàng</a></li>
+							<li><a href="#">Tìm Kiếm Sản Phẩm</a></li>
+							<li><a href="#">Giao hàng và quay trở lại</a></li>
+							<li><a href="contact.php"><span>Liên Hệ Với Chúng Tôi</span></a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4><i class="fas fa-shield-alt"  style="padding-right: 5px;"></i>Chúng Tôi Cam Kết</h4>
 						<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="faq.html">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="contact.html"><span>Site Map</span></a></li>
-						<li><a href="details.php"><span>Search Terms</span></a></li>
+							<li><a href="#">Giao Hàng Nhanh</a></li>
+							<li><a href="#">Miễn Phí Vận Chuyển</a></li>
+							<li><a href="#">Bảo Mật An Toàn</a></li>
+							<li><a href="#">Tin Cậy</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4><i class="fas fa-users" style="padding-right: 5px;"></i>Khách Hàng</h4>
 						<ul>
-							<li><a href="contact.html">Sign In</a></li>
-							<li><a href="index.html">View Cart</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="faq.html">Help</a></li>
+							<li><a href="login.php">Đăng Nhập</a></li>
+							<li><a href="index.html">Giỏ Hàng</a></li>
+							<li><a href="#">Sản Phẩm Yêu Thích</a></li>
+							<li><a href="#">Theo Dõi Đơn Hàng</a></li>
+							<li><a href="contact.php">Trợ Giúp</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Contact</h4>
+					<h4><i class="fas fa-phone-square-alt" style="padding-right: 5px;"></i>Liên Hệ</h4>
 						<ul>
-							<li><span>+88-01713458599</span></li>
-							<li><span>+88-01813458552</span></li>
+							<li><span>0320145678</span></li>
+							<li><span>0923155660</span></li>
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>Theo Dõi Chúng Tôi</h4>
 					   		  <ul>
 							      <li class="facebook"><a href="#" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
@@ -57,15 +56,6 @@
     </div>
     <script type="text/javascript">
 		$(document).ready(function() {
-			/*
-			var defaults = {
-	  			containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-	 		};
-			*/
-			
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});

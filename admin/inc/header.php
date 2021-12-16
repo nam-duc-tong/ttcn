@@ -79,7 +79,7 @@
                 <li class="ic-dashboard"><a href="index.php"><span>Bảng Điều Khiển</span></a> </li>
                 <li class="ic-form-style"><a href="http://localhost/project_phone/admin/customer.php?customerId=6"><span>Thông Tin Khách Hàng</span></a></li>
 				<li class="ic-typography"><a href="changepassword.php"><span>Thay Đổi Mật Khẩu</span></a></li>
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Thư</span></a></li>
+				<li class="ic-grid-tables"><a href="inbox.php"><span>Đơn Đặt Hàng</span></a></li>
                 <li class="ic-charts"><a href="http://localhost/project_phone/index.php"><span>Website</span></a></li>
             </ul>
         </div>

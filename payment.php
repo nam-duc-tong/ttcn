@@ -1,6 +1,6 @@
 <?php
 	require_once 'inc/header.php';
-
+    require_once 'inc/slider.php';
 ?>
  <?php
 	 	$login_check = Session::get('customer_login');
@@ -54,7 +54,7 @@
                     <h3>Phương Thức Thanh Toán</h3>
                 </div>
     		<div class="clear"></div>
-            <div class="wrapper_method">
+            <div class="wrapper_method" style="padding-top: 0px;">
                 <h3 class="payment">Chọn Phương Thức Thanh Toán</h3>
                  <a href="offinepayment.php">Thanh Toán Offline</a>
                  <a href="onlinepayment.php">Thanh Toán Online</a>    
@@ -62,10 +62,11 @@
                     <a href="cart.php" style="background:grey;"><< Quay Lại</a>
                 </div>
             </div>
+           
     	</div>
+        <div class="clear"></div>
  		</div>
  	</div>
-
-<?php
+     <?php
 	require_once 'inc/footer.php';
 ?>
