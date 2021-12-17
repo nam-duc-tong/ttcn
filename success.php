@@ -49,7 +49,7 @@
                 echo $total. 'VND';
             ?>
         </p>
-        <p class="success_note">Chúng tôi sẽ liên lạc sớm nhất có thể. Làm ơn xem lại chi tiết đơn hàng <a href="orderdetails.php">Click Here</a></p>
+        <p class="success_note">Chúng tôi sẽ liên lạc sớm nhất có thể. Làm ơn xem lại chi tiết đơn hàng <a href="orderdetails.php" style="text-decoration: none;"><span style="border: 1px solid red;background-color: red; color: #fff;padding: 5px;">Click Here</span></a></p>
         </div>
        
  	</div>

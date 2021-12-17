@@ -14,6 +14,7 @@
                 $tukhoa = $_POST['tukhoa'];
                 $search_product = $product->search_product($tukhoa);
             }
+
 			?>
     	<div class="content_top">
     		<div class="heading">
@@ -36,10 +37,11 @@
 				<?php
 					 	}
 					}
-						 else
-						 {
-								echo 'Category Not Avaiable!!!';
-						 }
+				
+				else
+					{
+						echo "<span class='error'>Sản Phẩm Không Có Sẵn</span>!!!";
+					}
 					 
 				?>
 			</div>

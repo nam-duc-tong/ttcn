@@ -55,50 +55,6 @@
     $('#dc_mega-menu-orange').dcMegaMenu({rowItems:'4',speed:'fast',effect:'fade'});
   });
 </script>
-<style>
-.dropbtn {
-  color: white;
-  /* padding: 16px; */
-  font-size: 16px;
-  border: none;
-  text-transform: uppercase;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
-
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* .dropdown-content a:hover {background-color: #ddd;} */
-
-.dropdown:hover .dropdown-content {
-	display: block;
-	margin-top: 10px;
-	background-color: #000;
-}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
 </head>
 <body>
   <div class="wrap">
@@ -158,49 +114,69 @@
 	 </div>
 	 <div class="clear"></div>
  </div>
+ <?php
+	// $sql_brand = mysqli_query('SELECT * FROM tbl_brand ORDER BY brandId DESC');
+ ?>
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  	<li><a href="index.php">Trang Chủ</a></li>
 	  	<li><a href="introduce.php">Giới Thiệu</a></li>
 	  	<li>
-
-			<div class="dropdown">
-				<div class="dropbtn">Sản Phẩm</div>
-				<div class="dropdown-content">
-					<a href="#">Sam Sung</a>
-					<a href="#">Iphone</a>
-					<a href="#">OPPO</a>
-					<a href="#">Xiaomi</a>
-				</d>
-			</div>
-			<option value="thuonghieu">Thương Hiệu</option>
+			  <a href="">Sản Phẩm</a>
+			  <ul style="font-size: 1.2em;">
+                        <li><a href="">APPLE</a></li>
+                        <li><a href="#">OPPO</a></li>
+                        <li><a href="#">IPHONE</a></li>
+						<li><a href="#">SAMSUNG</a></li>	
+            	</ul>
+				<!-- <form action="#" method="post">
+					<select name="product" id="product">
+						<option value = "">Sản Phẩm</option>
+						<?php
+							// while($row_brand = mysqli_fetch_array($sql_brand)) {
+						?>
+						<option value="OPPO"><?php //echo $row_brand?></option>
+						<?php
+						// }
+						?>
+					</select>
+				</form> -->
 		</li>
-				
-	<?php
-		//  $customer_Id = Session::get('customer_Id');
-		// 	$check_order = $ct->check_order($customer_Id);
-		// 	if($check_order==true){
-		// 		echo '<li><a href="orderdetails.php">Chi Tiết Đơn Hàng</a></li>';
-		// 	}
-		// 	else{
-		// 		echo '';
-		// 	}
-		?>
-	  <?php
-	 	// $login_check = Session::get('customer_login');
-		//  if($login_check==false){
-		// 	 echo '';
-		//  } 
-		//  else{
-		// 	 echo '<li><a href="profile.php">Thông Tin Khách Hàng</a></li>';
-		//  }
-	  ?>
-	  <?php
-	 	// $login_check = Session::get('customer_login');
-		//  if($login_check){
-		// 	echo '<li><a href="wishlist.php">Danh Sách Yêu Thích</a> </li>';
-		//  }
-	  ?>
+		<li>
+			<a href="">Khách Hàng</a>
+			<ul style="font-size: 1.2em;margin-top: 0px;">
+					<li>	
+						<?php
+						 $customer_Id = Session::get('customer_Id');
+							$check_order = $ct->check_order($customer_Id);
+							if($check_order==true){
+								echo '<a href="success.php">Chi Tiết Đơn Hàng</a>';
+							}
+							else{
+								echo '';
+							}
+						?>
+					</li>
+                        <li>
+							<?php
+								$login_check = Session::get('customer_login');
+								 if($login_check){
+									echo '<li><a href="wishlist.php">Danh Sách Yêu Thích</a> </li>';
+								 }
+							?>
+						</li>
+						<li><?php
+							$login_check = Session::get('customer_login');
+							if($login_check==false){
+								echo '';
+							} 
+							else{
+								echo '<a href="profile.php">Thông Tin Khách Hàng</a>';
+							}
+						?>	
+						</li>
+            	</ul>
+		</li>
 	  <li><a href="contact.php">Liên Hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 	require_once 'inc/header.php';
 	// require_once 'inc/slider.php';
 ?>
@@ -7,7 +8,7 @@
         $customer_Id = Session::get('customer_Id');
         $insertOrder = $ct->insertOrder($customer_Id);
         $delCart = $ct->del_all_data_cart();
-        header('Location: success.php');
+		header('Location:offinepayment.php');
     }
    
 	// if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
@@ -121,7 +122,7 @@
 					   <?php
 								}
 								else{
-									echo 'Your cart is empty! please  shopping now';
+									echo "<span class='success'>Đã Đặt Hàng Thành Công!</span>";
 								}  
 						?>
 					</div>	

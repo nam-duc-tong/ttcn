@@ -27,7 +27,8 @@
         public function select($query){
             $result = $this->link->query($query) or
             die($this->link->error.__LINE__);
-            if($result->num_rows>0){
+            if ( !empty($result->num_rows) && $result->num_rows > 0)
+            {
                 return $result;
             }
             else{

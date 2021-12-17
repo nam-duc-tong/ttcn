@@ -114,7 +114,7 @@
 					   <?php
 								}
 								else{
-									echo 'Giỏ Hàng Của Bạn Hiện Tại Đang Trống';
+									echo "<span class='error'>Giỏ Hàng Của Bạn Hiện Tại Đang Trống</span>";
 								}  
 						?>
 			</div>

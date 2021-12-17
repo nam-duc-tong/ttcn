@@ -55,6 +55,10 @@ ul.dc_mm-orange li a .dc-mega-icon{
 	top:25px;
 	width:8px;
 }
+ul.dc_mm-orange li.mega-hover a.sub-container.non-mega
+{
+	top: 50px !important;
+}
 ul.dc_mm-orange li.mega-hover a,ul.dc_mm-orange li a:hover{
 	color: #FFF;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70389c',endColorstr='#602d8d');
@@ -66,6 +70,7 @@ ul.dc_mm-orange li.mega-hover a,ul.dc_mm-orange li a:hover{
 ul.dc_mm-orange li .sub-container{
 	background:#F0F0F0;
 	margin-left:-3px;
+	top: 50px;
 	padding-left:20px;
 	position:absolute;
 	margin-top:10px;
@@ -102,8 +107,8 @@ ul.dc_mm-orange li .sub a{
 	color:#111;
 	display:block;
 	float:none;
-	font-size:0.9em;
-	padding:7px 10px;
+	font-size: 1.2em;
+	padding:7px 5px;
 	text-decoration:none;
 	text-shadow:none;
 }
@@ -135,6 +140,9 @@ ul.dc_mm-orange .sub li.mega-hdr li a:hover{
 }
 ul.dc_mm-orange .sub ul li{
 	padding-right:0;
+}
+.sub-container.non-mega {
+	top: 50px!important;
 }
 ul.dc_mm-orange li .sub-container.non-mega .sub{
 	padding:5px 20px 20px 0;
