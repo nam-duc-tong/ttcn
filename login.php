@@ -51,23 +51,21 @@
 						<tr>
 							<td>
 								<div>
-								<input type="text" name="name" placeholder="Nhập Tên ..." >
+								<input id ="username" type="text" name="name" placeholder="Nhập Tên ..." >
 								</div>
 								<div>
-									<input type="text" name="email" placeholder="Nhập Email ...">
+									<input id = "email" type="text" name="email" placeholder="Nhập Email ...">
 								</div>
 							</td>
 							<td>
 								<div>
-									<input type="text" name="address" placeholder="Nhập Địa Chỉ...">
+									<input id = "address" type="text" name="address" placeholder="Nhập Địa Chỉ...">
 								</div>
-
 								<div>
-								<input type="text" name="phone" placeholder="Nhập số điện thoại...">
+								<input id = "phone" type="text" name="phone" placeholder="Nhập số điện thoại...">
 								</div>
-						
 								<div>
-									<input type="text" name="password" placeholder="Nhập Mật Khẩu ...">
+									<input id = "password" type="text" name="password" placeholder="Nhập Mật Khẩu ...">
 								</div>
 							</td>
 		   			 	</tr> 

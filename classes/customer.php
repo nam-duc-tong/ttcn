@@ -34,6 +34,7 @@ ob_start();
                 }
             }
         }
+        
         public function insert_customers($data){
             $name = mysqli_real_escape_string($this->db->link,$data['name']);
             // $city = mysqli_real_escape_string($this->db->link,$data['city']);
@@ -51,12 +52,14 @@ ob_start();
             else{
                 $check_email ="SELECT * FROM tbl_customer WHERE email = '$email' LIMIT 1";
                 $result_check = $this->db->select($check_email);
+                $check_phone ="SELECT * FROM tbl_customer WHERE phone = '$phone' LIMIT 1";
+                
                 if($result_check){
                     $alert = "<span class = 'error'> Email Already Existed</span>";
                     return $alert;
                 }
-                else{
 
+                else{
                 $query = "INSERT INTO tbl_customer(name,email,address,phone,password) VALUES ('$ten', '$email', '$address', '$phone','$password')";
                 $result = $this->db->insert($query);
                 if($result){

@@ -19,6 +19,15 @@
 	 $product = new product();
 
 ?>
+<?php include './classes/brand.php'?>
+<?php
+    $brand = new brand();
+    if(isset($_GET['delid'])){
+        //neu ton tai delid thi se gan vaof $id
+        $id = $_GET['delid'];
+        $delbrand = $brand->del_brand($id);
+    }
+?>
 <?php
 //kiểm soát bộ nhớ đệm trong trình duyệt và bộ đệm được chia sẻ
   header("Cache-Control: no-cache, must-revalidate");
@@ -40,8 +49,10 @@
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script> 
 <script type="text/javascript" src="js/nav-hover.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Nova+Square&family=Open+Sans:wght@300;400;700&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
 <!-- font awersome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Latest compiled and minified CSS -->
@@ -123,28 +134,22 @@
 	  	<li><a href="introduce.php">Giới Thiệu</a></li>
 	  	<li>
 			  <a href="">Sản Phẩm</a>
-			  <ul style="font-size: 1.2em;">
-                        <li><a href="">APPLE</a></li>
-                        <li><a href="#">OPPO</a></li>
-                        <li><a href="#">IPHONE</a></li>
-						<li><a href="#">SAMSUNG</a></li>	
+			  <ul style="font-size: 1em;">
+			  <?php
+						 	$getall_category = $cat->show_category_fontend();
+							 if($getall_category){
+								 while($result_allcat = $getall_category->fetch_assoc()){
+						 ?>
+						 <li><a href="productbycat.php?catId=<?php echo $result_allcat['catId']?>"><?php echo $result_allcat['catName']?></a></li>
+						<?php	 
+								}
+							}
+						?>
             	</ul>
-				<!-- <form action="#" method="post">
-					<select name="product" id="product">
-						<option value = "">Sản Phẩm</option>
-						<?php
-							// while($row_brand = mysqli_fetch_array($sql_brand)) {
-						?>
-						<option value="OPPO"><?php //echo $row_brand?></option>
-						<?php
-						// }
-						?>
-					</select>
-				</form> -->
 		</li>
 		<li>
 			<a href="">Khách Hàng</a>
-			<ul style="font-size: 1.2em;margin-top: 0px;">
+			<ul style="font-size: 1em;margin-top: 0px;">
 					<li>	
 						<?php
 						 $customer_Id = Session::get('customer_Id');

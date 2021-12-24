@@ -36,6 +36,11 @@
             $result = $this->db->select($query);
             return $result;
         }
+        public function show_brand_fontend(){
+            $query = "SELECT * from  tbl_brand order by brandId desc";
+            $result = $this->db->select($query);
+            return $result;
+        }
         public function getbrandbyid($id){
             $query = "SELECT * FROM tbl_brand where brandId = '$id'";
             $result = $this->db->select($query);

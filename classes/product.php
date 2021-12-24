@@ -164,7 +164,7 @@
             else{
                 if(!empty($file_name)){
                     //neu nguoi dung chon anh
-                    if($file_size>204800){//kiểm tra kích cơ file hịnh anh
+                    if($file_size>20480000){//kiểm tra kích cơ file hịnh anh
                         $alert = "<span class='success'>Kích Thước Ảnh Phải Quá Lớn</span>";
                         return $alert;
                     }
@@ -292,12 +292,12 @@
             $result = $this->db->select($query);
             return $result;
         }
-        public function getLastestApple(){
+        public function getLastestXiaomi(){
             $query = "SELECT * FROM tbl_product WHERE brandId = '18' order by productId desc LIMIT 1";
             $result = $this->db->select($query);
             return $result;
         }
-        public function getLastestOPPO(){
+        public function getLastestOppo(){
             $query = "SELECT * FROM tbl_product WHERE brandId = '17' order by productId desc LIMIT 1";
             $result = $this->db->select($query);
             return $result;
